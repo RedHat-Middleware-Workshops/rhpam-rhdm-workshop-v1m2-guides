@@ -32,3 +32,4 @@ modules:
   - use-case-overview
   - business-model
   - decisions-authoring
+  - decisions-service

@@ -7,6 +7,7 @@ Agenda
 * Use Case Overview
 * Business Object Model
 * Decisions Authoring
+* Decisions as a Service
 
 Lab Instructions on OpenShift
 ===
