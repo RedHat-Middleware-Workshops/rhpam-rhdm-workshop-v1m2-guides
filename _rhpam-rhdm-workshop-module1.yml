@@ -33,3 +33,5 @@ modules:
   - business-model
   - decisions-authoring
   - decisions-service
+  - test-decision-service
+  - execute-decision-service

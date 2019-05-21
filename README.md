@@ -8,6 +8,8 @@ Agenda
 * Business Object Model
 * Decisions Authoring
 * Decisions as a Service
+* Testing a Decision Service
+* Executing a Decision Service
 
 Lab Instructions on OpenShift
 ===
