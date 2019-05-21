@@ -1,0 +1,8 @@
+config:
+    renderer: markdown
+
+modules:
+  use-case-overview:
+    name: User Case Introduction
+  business-model:
+    name: Business Object Model
