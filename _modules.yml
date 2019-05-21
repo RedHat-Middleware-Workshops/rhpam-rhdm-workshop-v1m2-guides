@@ -2,6 +2,8 @@ config:
     renderer: markdown
 
 modules:
+  intro:
+    name: Introduction
   use-case-overview:
     name: Use Case Introduction
   business-model:
@@ -14,3 +16,5 @@ modules:
     name: Testing a Decision Service
   execute-decision-service:
     name: Executing a Decision Service
+  finish:
+    name: Conclusion

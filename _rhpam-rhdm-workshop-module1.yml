@@ -29,9 +29,11 @@ vars:
 
 modules:
   activate:
+  - intro
   - use-case-overview
   - business-model
   - decisions-authoring
   - decisions-service
   - test-decision-service
   - execute-decision-service
+  - finish
