@@ -35,7 +35,7 @@ Creating the Card Holder entity.
 
 1. Login to business-central web console at http://rhpam7-workshop-rhpamcentr-rhpam7-workshop.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].http-proxy.katacoda.com/
 
-![Business Central Console]({% image_path business-central-console.png %}){:width="600px"}
+<img src="../../assets/middleware/rhpam-7-workshop/business-central-console.png" width="600" />
 
 2. Select Design from the main menu, you will be redirected to your working space, this is the sandbox for you to define your projects and within those projects assets.
 
