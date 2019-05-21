@@ -8,12 +8,12 @@ To access the Swagger page of the execution server, navigate to: http://rhpam7-w
 
 You will see the following page.
 
-<img src="../../assets/middleware/rhpam-7-workshop/kie-server-swagger.png"  width="600" />
+![KIE Server Swagger]({% image_path kie-server-swagger.png %}){:width="600px"}
 
 In this page, navigate to the section that says **Rules evaluation :: BRM**, and click on the green bar that says *POST /server/containers/instances/{id}
 Evaluates rules by executing commands on the rule session*. This will show the API description of this RESTful operation. Click on the *Try it out* button at the right of the panel, this will allow you to enter the values of the request. First we change the *Parameter content type* and the *Response content type* from `application/xml` to `application/json`:
 
-<img src="../../assets/middleware/rhpam-7-workshop/swagger-application-json.png"  width="600" />
+![Swaggger Application JSON]({% image_path swagger-application-json.png %}){:width="600px"}
 
 This specifies the dataformat that we will be using for our request and response. In this case this is the JSON format.
 
@@ -66,11 +66,11 @@ We can see that we pass in the `FraudData`, with a `totalFraudAmount` of 1000.0.
 
 When we've entered our data, click on the blue *Execute* button to fire the request. When the browser ask for a username and password, use username: `developer`{{copy}} and password: `developer`{{copy}}:
 
-<img src="../../assets/middleware/rhpam-7-workshop/swagger-request.png"  width="600" />
+![Swaggger Request]({% image_path swagger-request.png %}){:width="600px"}
 
 If all goes well, the decision service will reply with the following response:
 
-<img src="../../assets/middleware/rhpam-7-workshop/swagger-response.png"  width="600" />
+![Swaggger Response]({% image_path swagger-response.png %}){:width="600px"}
 
 Note that the rules have qualified this data for *automatic processing* and the risk has been set to *2*:
 

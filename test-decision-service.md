@@ -4,7 +4,7 @@ Now that you've created your Decision Service, and have deployed it on the Red H
 
 In this step of our scenario however, we will simply test our service via a simple web-application that we've provided for you. The application allows you to enter the data of the credit-card holder, and the data of the line item. The data is submitted to the Decision Server, which will calculate the risk of the transaction and determine whether the data can be automatically processed.
 
-<img src="../../assets/middleware/rhpam-7-workshop/reactjs-app.png"  width="600" />
+![ReactJS App]({% image_path reactjs-app.png %}){:width="600px"}
 
 Access the application at: http://react-web-app-rhpam7-workshop.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].http-proxy.katacoda.com/docs
 
@@ -17,7 +17,7 @@ Enter the following details:
 
 Next, click on the _Submit_ button. The application will send a RESTful request to the Decision Server. If everything is working correctly,m the Decision Server will send a result that will be displayed in the application:
 
-<img src="../../assets/middleware/rhpam-7-workshop/reactjs-app-request-response.png"  width="600" />
+![ReactJS App Request Response]({% image_path reactjs-app-request-response.png %}){:width="600px"}
 
 We can see that the `riskRating` has been set to **2** and the transaction is eligible for automated processing. Feel free to test your Decision Service with different values to see if all the use-cases you've implemented in your rules are covered.
 
