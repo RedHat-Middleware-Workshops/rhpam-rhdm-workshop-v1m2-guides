@@ -1,4 +1,4 @@
-id: "rhpamrhdm"
+id: "rhpam_rhdm"
 name: "RHPAM / RHDM Workshop 2019 - Module 1"
 
 content:
@@ -29,5 +29,5 @@ vars:
 
 modules:
   activate:
-  - use-case-introduction
+  - use-case-overview
   - business-model
