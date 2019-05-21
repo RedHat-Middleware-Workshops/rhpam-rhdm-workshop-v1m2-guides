@@ -31,3 +31,4 @@ modules:
   activate:
   - use-case-overview
   - business-model
+  - decisions-authoring

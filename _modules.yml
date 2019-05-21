@@ -6,3 +6,5 @@ modules:
     name: User Case Introduction
   business-model:
     name: Business Object Model
+  decisions-authoring:
+    name: Authoring Business Rules and Decisions

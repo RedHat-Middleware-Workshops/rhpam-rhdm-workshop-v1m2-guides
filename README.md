@@ -6,6 +6,7 @@ Agenda
 ===
 * Use Case Overview
 * Business Object Model
+* Decisions Authoring
 
 Lab Instructions on OpenShift
 ===
