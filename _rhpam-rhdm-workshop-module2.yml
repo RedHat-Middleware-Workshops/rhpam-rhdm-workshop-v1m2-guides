@@ -2,7 +2,7 @@ id: "rhpam_rhdm"
 name: "RHPAM / RHDM Workshop 2019 - Module 1"
 
 content:
-  url: https://raw.githubusercontent.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m1-guides.git/master
+  url: https://raw.githubusercontent.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-guides.git/master
 
 vars:
   OPENSHIFT_DOCS_BASE: "https://docs.openshift.com/container-platform/3.11"
