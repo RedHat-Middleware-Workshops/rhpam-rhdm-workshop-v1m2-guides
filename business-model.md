@@ -35,7 +35,7 @@ Creating the Card Holder entity.
 
 1. Login to business-central web console at http://rhpam7-workshop-rhpamcentr-rhpam7-workshop.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].http-proxy.katacoda.com/
 
-<img src="../../assets/middleware/rhpam-7-workshop/business-central-console.png" width="600" />
+![Business Central Console]({% image_path business-central-console.png %}){:width="600px"}
 
 2. Select Design from the main menu, you will be redirected to your working space, this is the sandbox for you to define your projects and within those projects assets.
 
@@ -45,21 +45,19 @@ Creating the Card Holder entity.
 
 Once the creation of your project is complete you should see the following page with the project content, empty so far.
 
-<img src="../../assets/middleware/rhpam-7-workshop/business-central-asset-empty-project.png"  width="600" />
+![Business Central Asset Empty Project]({% image_path business-central-asset-empty-project.png %}){:width="600px"}
 
 4. In the upper right corner you will see a blue button called `Add Asset`. An asset is any Rule, Process, Decision Table, Data Object, Data Form, etc. Click on the `Add Asset` button and you will be presented with a catalog of the wizards to create assets.
 
-<img src="../../assets/middleware/rhpam-7-workshop/business-central-asset-catalog.png" width="600" />
+![Business Central Asset Catalog]({% image_path business-central-asset-catalog.png %}){:width="600px"}
 
 5. Select the wizard for _Data Object_ from the catalog to create your business object model for the Credit Card Holder, type `CardHolder` {{copy}} as the name of the object and select com.myspace.ccd_project as the Package. Click OK
 
-<img src="../../assets/middleware/rhpam-7-workshop/business-central-CCD-object-new.png" width="600" />
+![Business Central CCD Object]({% image_path business-central-CCD-object-new.png %}){:width="600px"}
 
-6- You will see the new created object with no properties, lets click on the `+add field` button to start adding the properties to our CreditCardHolder.
+6. You will see the new created object with no properties, lets click on the `+add field` button to start adding the properties to our CreditCardHolder.
 
-
-<img src="../../assets/middleware/rhpam-7-workshop/business-central-CCD-object-new-empty.png" width="600" />
-
+![Business Central CCD Object New Empty]({% image_path business-central-CCD-object-new-empty.png %}){:width="600px"}
 
 7- Click  in the window for New Field create a new property with the following values:
 
@@ -73,7 +71,7 @@ Description: `Age of the Credit Card Holder`{{copy}}
 
 Type: Integer
 
-<img src="../../assets/middleware/rhpam-7-workshop/business-central-CCD-object-new-properties.png" width="600" />
+![Business Central CCD Object New Properties]({% image_path business-central-CCD-object-new-properties.png %}){:width="600px"}
 
 The first step to automate a process or decision is to define and specify the Business Object Model, here you just created the Entity Credit Card Holder, these entities will be used to store the information that you need to make decisions.
 
