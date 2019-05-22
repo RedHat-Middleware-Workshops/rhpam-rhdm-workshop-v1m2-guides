@@ -28,7 +28,7 @@ Here is an example Ansible playbook to deploy the lab instruction to your OpenSh
       workshopper_name: "RHPAM / RHDM Workshop V1 Module-2"
       project_suffix: "-XX"
       workshopper_content_url_prefix: https://raw.githubusercontent.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-guides/master
-      workshopper_workshop_urls: https://raw.githubusercontent.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-guides/master/_rhpam-rhdm-workshop-module1.yml
+      workshopper_workshop_urls: https://raw.githubusercontent.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-guides/master/_rhpam-rhdm-workshop-module2.yml
       workshopper_env_vars:
         PROJECT_SUFFIX: "-XX"
         COOLSTORE_PROJECT: coolstore{{ project_suffix }}
