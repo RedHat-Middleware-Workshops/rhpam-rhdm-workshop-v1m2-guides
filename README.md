@@ -18,7 +18,7 @@ Note that if you have installed the lab infra via APB, the lab instructions are 
 
 Here is an example Ansible playbook to deploy the lab instruction to your OpenShift cluster manually.
 ```
-- name: Create Guides Module 1
+- name: Create Guides Module 2
   hosts: localhost
   tasks:
   - import_role:
