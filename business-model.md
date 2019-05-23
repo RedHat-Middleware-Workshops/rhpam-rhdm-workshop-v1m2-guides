@@ -13,17 +13,14 @@ The Credit Card Dispute process is not straightforward. It involves different ac
 
 We have identified the actors involved in the overall CC Dispute process. These actors are outside of the corporation and we can think of them as external entities. Entities that we will connect with to get information, but that do not participate in the dispute resolution process. We will see more of that in the Case Management Scenario.
 
-<aside class="notice">
-You must replace `meowmeowmeow` with your personal API key.
-</aside>
-
 ---
 **NOTE**
 
 To get an overview of the actors, look into the Use Case overview of step 1 of this module.
+
 ---
 
-One of the requirements to successfully process a dispute is that all of the parties involved are aware of the dispute status at all times. Since they can all influence the final resolution of the dispute. Because different parties will have visibility and sometimes control over the process we need a domain model that clearly depicts the objects that describe the data and the actors that do interact in the resolution of the Credit Card Dispute process.
+One of the requirements to successfully process a dispute is that all of the parties involved are aware of the dispute status at all times, since they can all influence the final resolution of the dispute. Because different parties will have visibility into, and sometimes control over, the process, we need a domain model that clearly depicts the objects that describe the data and the actors that do interact in the resolution of the Credit Card Dispute process.
 
 So far we can identify 3 major entities:
 
@@ -31,16 +28,31 @@ So far we can identify 3 major entities:
 - Fraud Data
 - Additional Information
 
-_The difference between these entities and the Actors is that this entities are the ones that contain data that is relevant to process the dispute. This data will come from the different actors and then it will be stored in process variables._
+_The difference between these entities and the Actors is that these entities are the ones that contain data that is relevant to the processing of the dispute. This data will come from/is provide by the different actors and will be stored in the dispute process instance as process variables._
 
 ## The Business Domain Context
 
-You as business domain expert, need to define what is the domain model for the business capability you are trying to automate. Eric Evans coined the term Domain Driven Design that holds 3 main guiding principles: Focus on the core domain; explore models in a creative collaboration of domain practitioners and software practitioners; and speak a ubiquitous language within an explicitly bounded context. You can learn more about this design approach in his book.
-So the first and very important task to automate a core business capability is to create a definition of the business entities within the context of Credit Card Dispute, in this case the first entity is the Credit Card Holder, the definition in the context of our use case maybe totally different from the definition inside Pecunia Corp. but it will be common  among the team of business and technology experts.
+You, as business domain expert, need to define what the domain model is for the business capability you're trying to automate. Eric Evans coined the term [_Domain Driven Design_](https://en.wikipedia.org/wiki/Domain-driven_design) that holds 3 main guiding principles:
+- Focus on the core domain.
+- Explore models in a creative collaboration of domain practitioners and software practitioners.
+- Speak a ubiquitous language within an explicitly bounded context.
 
-Creating the Card Holder entity.
+You can learn more about this design approach in his book.
 
-1. Login to business-central web console at http://rhpam7-workshop-rhpamcentr-rhpam7-workshop.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].http-proxy.katacoda.com/
+So, the first and very important task when automating a core business capability is to create a definition of the business entities within the context of the Credit Card Dispute domain. In our case, our first entity is the `Credit Card Holder`. The definition in the context of our use case maybe totally different from the definition inside other organizations. But within our use case, it will be common definition among the team of business and technology experts. I.e. it will be part of our _ubiquitous language_.
+
+## Creating the Card Holder entity
+
+1. Open the [OpenShift Console]({{ OPENSHIFT_CONSOLE_URL }}) in a web-browser. You've been assigned a username and password by your lab instructor. Use these credentials to login to the console.
+
+2. In your OpenShift Console, you will see a project called "RHPAM - User {x}". Click on this project to open it.
+
+3. In this project you will see an application called `rhpam7-rhpamcentr`. Click on the box of this application to expand it. On the lower right-hand-side of this box you will see a section called `Routes - External Traffic`. Click on either the
+`http` or `https` route to access the RHPAM Business Central Workbench.
+
+![OpenShift Business Central Route]({% image_path openshift-business-central-route.png %}){:width="600px"}
+
+4. Login to Business Central with the credentials u:`pamAdmin`, p:`redhatpam1!`
 
 ![Business Central Console]({% image_path business-central-console.png %}){:width="600px"}
 
