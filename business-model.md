@@ -3,18 +3,25 @@
 
 In this section you will learn
 
-1. What is the Business Object Model.
+1. What is a Business Object Model.
 
-2. How to create it inside the Business Central Web Console.
+2. How to create a Business Object Model inside the RHPAM Business Central Workbench.
 
 3. How to import a project into your space.
 
-The credit card dispute process is not  straightforward, it involves different actors inside and outside of the company. These actors need to have visibility at all times into what  is happening during the processing of each dispute.
+The Credit Card Dispute process is not straightforward. It involves different actors inside, and outside of, the company. These actors need to have visibility and control at all times into what is happening during the processing of each dispute.
 
+We have identified the actors involved in the overall CC Dispute process. These actors are outside of the corporation and we can think of them as external entities. Entities that we will connect with to get information, but that do not participate in the dispute resolution process. We will see more of that in the Case Management Scenario.
 
-We have identified the actors involved in the overall CC Dispute process, these actors are outside of the corporation and we can think of them as  the external entities, that we will connect to, to get information, but do not participate in the dispute resolution, we will see more of that in the Case Management Scenario.
+<aside class="notice">
+You must replace `meowmeowmeow` with your personal API key.
+</aside>
 
-Note: To get a reminder of the actors look into the Use Case overview or step 1 of this scenario.
+---
+**NOTE**
+
+To get an overview of the actors, look into the Use Case overview of step 1 of this module.
+---
 
 One of the requirements to successfully process a dispute is that all of the parties involved are aware of the dispute status at all times. Since they can all influence the final resolution of the dispute. Because different parties will have visibility and sometimes control over the process we need a domain model that clearly depicts the objects that describe the data and the actors that do interact in the resolution of the Credit Card Dispute process.
 
