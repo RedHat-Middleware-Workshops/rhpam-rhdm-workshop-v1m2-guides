@@ -1,14 +1,12 @@
-****THE BUSINESS BACKGROUND****
--------------------------------
+# The Business Background
 
+**What you will learn:**
 
+In this scenario you will be introduced to policies, decisions and rules, why these concepts and methodologies are important, and what the industry standards are in this area.
 
-What you will learn: In this scenario you will learn what are policies, and implicit knowledge why is this important and what is the industry standard around it. With the labs you will define the policies to solve a credit card dispute using different approaches like Decision tables and spreadsheets, DMN, and technical rules. Once deployed you will expose those decisions as a service, accessible through API’s
-Topics covered:  Rules, DRL, DMN, and Decision tables. OMG standards,  deploying your first assets, kjar, and REST API for rules.
+In the labs, you will define the policies to solve a credit card dispute using different approaches like Decision tables and Spreadsheets, DMN, and technical rules. Once deployed you will expose these rules and decisions as a service, accessible through API’s,
+
+**Topics covered:** Rules, DRL, DMN, Decision tTables, OMG standards,  deploying your first assets, KJARs, and the REST API for rules and decisions.
 
 
 More information can be found at http://docs.redhat.com
-
-
-
-
