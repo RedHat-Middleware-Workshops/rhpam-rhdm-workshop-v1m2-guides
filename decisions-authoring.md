@@ -55,8 +55,6 @@ We have defined the Business Object Model in the previous lab. As the workshop p
 https://github.com/MyriamFentanes/business-policies-decisions-scenario-step2
 
 
-
-
 ### Decision Tables
 
 A very common way to define the logic behind risk assessment is to store this information in spreadsheets. With Red Hat Process Automation Manager you can use the same spreadsheet approach and make it an executable asset (i.e. a set of rules) in the engine. In this section we are going to create a _Decision Table_ to automate the risk assessment rules that were given to you.
@@ -71,8 +69,8 @@ A very common way to define the logic behind risk assessment is to store this in
 
 3. Type the following values on the `Create New Decision Table` wizard
 
-Name: `risk-evaluation`{{copy}}
-Package: `com.myspace.ccd_project`{{copy}}
+Name: `risk-evaluation`{{copy}}  
+Package: `com.myspace.ccd_project`{{copy}}  
 Select the checkbox: Use Wizard
 
 Click ok and Finish
@@ -169,10 +167,10 @@ Click on the button Insert and select append row from the dropdown menu.
 
 Click on the Description cell of the new row and type "_Low risk standard costumer_". Use the following values for the other columns:
 
-Description:`Low risk standard costumer`{{copy}}
-Status:`Standard`{{copy}}
-Minimum Amount:`0`{{copy}}
-Max Amount:`100`{{copy}}
+Description:`Low risk standard costumer`{{copy}}  
+Status:`Standard`{{copy}}  
+Minimum Amount:`0`{{copy}}  
+Max Amount:`100`{{copy}}  
 Risk Scoring:`1`{{copy}}
 
 Your decision table should look like this. Click Save.
@@ -208,8 +206,7 @@ First we need to tell the rule what object or collection of objects is going to 
 
 5. Set the following data in the creation wizard:
 
-Name: `automated-chargeback`{{copy}}
-
+Name: `automated-chargeback`{{copy}}  
 Package: `com.myspace.ccd_project`{{copy}}
 
 ![Business Central Guided Rule New]({% image_path business-central-guided-rule-new.png %}){:width="600px"}
