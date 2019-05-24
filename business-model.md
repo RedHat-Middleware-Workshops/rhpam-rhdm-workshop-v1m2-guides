@@ -56,21 +56,19 @@ So, the first and very important task when automating a core business capability
 
     ![Business Central Console]({% image_path business-central-console.png %}){:width="600px"}
 
-5. Select Design from the main menu, you will be redirected to your working space, this is the sandbox for you to define your projects and within those projects assets.
+5. Select _Design_ from the main menu. You will be redirected to your working space. This is the sandbox in which you'll define your projects, and within those projects, your projects assets.
 
-6. Click on Add Project to create a new Project in your space called MySpace, when the Add Project wizard opens up type in
-`credit-card-dispute`{{copy}} as the name of the project, this project is your business boundary that encapsulates a business capability and then type
-`Assets to Automate credit card dispute process`{{copy}} as the description of your project.
+6. Click on the _Add Project_ button to create a new project in your space. When the _Add Project_ wizard opens up, type in `ccd-project` as the name of the project, and `Assets to Automate credit card dispute process` as the description of your project. This project is your business boundary that encapsulates your business capability.
 
-    Once the creation of your project is complete you should see the following page with the project content, empty so far.
+    Once the creation of your project is complete you should see the following page with the project content, which, at the moment, is empty.
 
     ![Business Central Asset Empty Project]({% image_path business-central-asset-empty-project.png %}){:width="600px"}
 
-7. In the upper right corner you will see a blue button called `Add Asset`. An asset is any Rule, Process, Decision Table, Data Object, Data Form, etc. Click on the `Add Asset` button and you will be presented with a catalog of the wizards to create assets.
+7. You will see a blue button called `Add Asset`. An asset is any Rule, Process, Decision Table, Data Object, Data Form, etc. Click on the `Add Asset` button and you will be presented with a catalog of the wizards to create assets.
 
     ![Business Central Asset Catalog]({% image_path business-central-asset-catalog.png %}){:width="600px"}
 
-8. Select the wizard for _Data Object_ from the catalog to create your business object model for the Credit Card Holder, type `CardHolder` {{copy}} as the name of the object and select com.myspace.ccd_project as the Package. Click OK
+8. Select the wizard for _Data Object_ from the catalog to create your business object model for the _Credit Card Holder_, type `CreditCardHolder` {{copy}} as the name of the object and select `com.myspace.ccd_project` as the Package. Click OK
 
     ![Business Central CCD Object]({% image_path business-central-CCD-object-new.png %}){:width="600px"}
 
