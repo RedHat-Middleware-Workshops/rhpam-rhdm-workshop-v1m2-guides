@@ -91,9 +91,9 @@ You will now import the rest of the Business Object Model from a predefined repo
 
 1. Watch the video on how to import a repository into your workspace.
 
-    [Youtube Importing a project](https://youtu.be/LUOw1TrYDWs)
+    [Youtube: Importing a project](https://youtu.be/LUOw1TrYDWs)
 
 
 2. Go back to your space overview screen by clicking on the `MySpace` link in the breadcrumb navigation in the top-left of your screen. Create the rest of the Domain Model by importing the project Domain Model CC Dispute  from the following repository:
 
-    https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git
+    [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git)
