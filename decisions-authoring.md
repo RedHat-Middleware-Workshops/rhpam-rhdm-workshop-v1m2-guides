@@ -24,9 +24,7 @@ For this particular case, 2 sets of rules are defined for different stages on th
 
 At the moment, all processing is manual. There is a group of agents dedicated to making decisions based on the data of the dispute. This is not only expensive, but also very prone to error and inconsistent.
 
-The cost of processing a dispute for Pecunia Corp. is high and independent of the amount that is being disputed. That is why it's very important to have flexible rules that reduce the processing cost and time. Apart from reducing cost, this will also improve customer customer experience.
-
-At the moment, all processing is manual. There is a group of agents dedicated to making decisions based on the data of the dispute. This is not only expensive, but also very prone to error and inconsistent.
+The cost of processing a dispute for Pecunia Corp. is high and independent of the amount that is being disputed. That is why it's very important to have flexible rules that reduce the processing cost and time. Apart from reducing cost, this will also improve customer experience.
 
 The rules defined for the process are:
 
@@ -42,50 +40,42 @@ The rules defined for the process are:
       - Silver customer anything between 250-500 medium risk
       - Silver customer anything below 250  low risk
 
-
-
-- If the customer billing address is in the state on Texas, California or Florida the dispute should be consider of higher risk.
+- If the customer's billing address is in the state of Texas, California or Florida, the dispute should be considered of higher risk.
 
 ## The Authoring Tools
 
-We have defined the Business Object Model in the previous lab. As the workshop platform does not support persistence between modules, you need to import the following repository to retrieve a project that contains the model. If you don't know how to import an existing project, you can watch the video on how to import a repository into your workspace
-
-1. Import the rest of the Domain Model by importing the project Domain Model CC Dispute  from the following repository:
-
-https://github.com/MyriamFentanes/business-policies-decisions-scenario-step2
-
+You have defined the Business Object Model in the previous lab. In the last step of the previous lab, you've imported a project with the complete Business Object Model. We will use this project as the base for this lab.
 
 ### Decision Tables
 
 A very common way to define the logic behind risk assessment is to store this information in spreadsheets. With Red Hat Process Automation Manager you can use the same spreadsheet approach and make it an executable asset (i.e. a set of rules) in the engine. In this section we are going to create a _Decision Table_ to automate the risk assessment rules that were given to you.
 
-1. First we go back to the Library view and we click on the blue button `Add Asset`.
+1. First we go back to the Library view and we click on the blue `Add Asset` button in the top right corner.
 
 ![Business Central Decision Table Add Asset]({% image_path business-central-decision-table-add-asset.png %}){:width="600px"}
 
-2. We select `Guided Decision Table` from the catalog of assets
+2. We select `Guided Decision Table` from the catalog of assets (the UI allows you to filter the assets per type by using the filter drop-down and input box in the upper-left of the screen. Select `Decisions` to filter on decision assets).
 
 ![Business Central Decision Table Add Asset Guided]({% image_path business-central-decision-table-add-asset-guided.png %}){:width="600px"}
 
 3. Type the following values on the `Create New Decision Table` wizard
 
-Name: `risk-evaluation`{{copy}}  
-Package: `com.myspace.ccd_project`{{copy}}  
-Select the checkbox: Use Wizard
+Guided Decision Table (Name): `risk-evaluation`
+Package: `com.myspace.ccd_project`
 
-Click ok and Finish
+Click _Ok_ and _Finish_.
 
-4. You should see the `Guided Decision Table` wizard with an empty table.
+4. You should see the `Guided Decision Table` editor with an empty table.
 
 ![Business Central Decision Table New]({% image_path business-central-decision-table-new.png %}){:width="600px"}
 
-There are 5 tabs in the wizard:
+There are 5 tabs in the editor:
 
-- Model: The model diagram of the Decision Table
-- Columns: Wizard to Add, Edit or Delete columns in your table. Each column is a constraint (LHS) on a property of a Business Model Object, or an action (RHS).
-- Overview: Contains the meta-information of your asset: Version, Description, Last Modified, etc.
-- Source: Is the actual source code that is generated from the Decision Table Model. In the runtime engine, decision tables are translated into native DRL (Drools Rule Language), where each row in the table is translated into a rule.
-- Data Objects: Lists the Business Objects available to the wizard to be used as conditions and/or actions
+- _Model_: The model diagram of the Decision Table
+- _Columns_: Add, Edit or Delete columns in your table. A column can represent an Attribute, Metadata, a Constraint (rule left-hand-side or LHS) on a property of a Business Model Object, or an Action (rule right-hand-side or RHS).
+- _Overview_: Contains the meta-information of your asset: Version, Description, Last Modified, etc.
+- _Source_: Is the actual source code that is generated from the Decision Table Model. In the runtime engine, decision tables are translated into native DRL (Drools Rule Language), where each row in the table is translated into a rule.
+- _Data Objects_: Lists the Business Objects available to the editor to be used as conditions and/or actions.
 
 In our system, the properties evaluated to determine the risk scoring are:
 
