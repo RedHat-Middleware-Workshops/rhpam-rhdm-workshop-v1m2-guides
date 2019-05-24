@@ -134,17 +134,22 @@ A very common way to define the logic behind risk assessment is to store this in
 
     ![Business Central Decision Table Columns]({% image_path business-central-decision-table-columns.png %}){:width="600px"}
 
-13. Next go to the `Columns` tab and Click on `Insert Column`. This time we are adding an Action, the Right-Hand-Side of a rule. This action will be fired when the conditions are met. Select `Set the value of a field` and click next.
+12. Click on the _Save_ button to save the decision table.
 
-14. We want to set the risk scoring property of the `FraudData` object. So in the dropdown menu select the object `FraudData` bound to the variable `data`.Click Next.
+14. Next go to the `Columns` tab and Click on `Insert Column`. This time we are adding an Action, the Right-Hand-Side of a rule. This action will be fired when the conditions are met. Select `Set the value of a field` and click next.
+
+15. We want to set the risk scoring property of the `FraudData` object. So in the dropdown menu select the object `FraudData` bound to the variable `data`.Click Next.
 
     ![Business Central Decision Table Columns Action Data]({% image_path business-central-decision-table-columns-action-data.png %}){:width="600px"}
 
-15.  Select the field `disputeRiskRating` and click Next. We don't have a list of values so click Next. Type `Risk Scoring` as the header for the column and click Finish.
+16.  Select the field `disputeRiskRating` and click Next. We don't have a list of values so click Next. Type `Risk Scoring` as the header for the column and click Finish.
 
     ![Business Central Decision Table Columns Action Data Finish]({% image_path business-central-decision-table-columns-action-data-finish.png %}){:width="600px"}
 
-16. Go back to your `Model` tab, which should show the following decision table.
+17. Click on the _Save_ button to save the decision table.
+
+
+18. Go back to your `Model` tab, which should show the following decision table.
 
     ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-columns-action-data-finish-model.png %}){:width="600px"}
 
@@ -154,11 +159,11 @@ A very common way to define the logic behind risk assessment is to store this in
 
     There are 4 levels of risk: low, medium, high and very-high. We will defined these risk-levels as integers: 1,2,3, and 4.
 
-17. Click on the button Insert and select append row from the dropdown menu.
+19. Click on the button Insert and select append row from the dropdown menu.
 
      ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-append-row.png %}){:width="600px"}
 
-18. Click on the Description cell of the new row and type "_Low risk standard costumer_". Use the following values for the other columns:
+20. Click on the _Description_ cell of the new row and type "_Low risk standard costumer_". Use the following values for the other columns:
 
      - Description:`Low risk standard costumer`{{copy}}  
      - Status:`Standard`{{copy}}  
@@ -177,17 +182,25 @@ A very common way to define the logic behind risk assessment is to store this in
 
 ## Guided Rules
 
-Guided Rules are one of the various types of rules you can create in Business Central. Once you have defined the Business Object Model, you can create rules that check conditions on the properties of these objects, rules that define conditions on combinations of objects, etc. For example, you can define a rule with a constraint on a Credit Card Holder's age, his/her status, riskRating, etc. If the condition or conditions are met, the rule is set to be _matched_ and becomes eligible for _firing_. When the rule fires, it executes the action defined in the rule. The action is the _THEN_ part of the rule, or what is also called the rule's Right-Hand-Side (RHS).
+Guided Rules are one of the various types of rules you can create in Business Central. Once you have defined the Business Object Model, you can create rules that check conditions on the properties of these objects, rules that define conditions on combinations of objects, etc. For example, you can define a rule with a constraint on a Credit Card Holder's age, his/her status, riskRating, etc. If the condition or conditions are met, the rule is set to be _matched_ and becomes eligible for _firing_. When the rule fires, it executes the action defined in the rule. The action is the _THEN_ part of the rule, or what is also called the rule's consequence, or Right-Hand-Side (RHS).
 
-In the case of the rules for automatic chargeback we are evaluating only the Credit Card Holder. So lets create the rule.
-First we need to tell the rule what object or collection of objects is going to be evaluated. Rules have a very basic syntax, and basically consist of 3 parts. You have the _WHEN_ section, also known as the Left Hand Side (LHS) or Constraint. This is the part of the rule in which you define the discrimination criteria that is applied to the Credit Card Holders objects to discriminate the card holders that qualify for an automated chargeback.
+In the previous section we've created the rules, in the form a decision table, that determine the credit risk scoring. In this section, we want to create the rules that determine whether the credit card dispute is eligible for automatic chargeback. We will create this rule in the form of _Guided Rule_.
 
+In the case of the rules for automatic chargeback we are evaluating only the Credit Card Holder. So let's create the rule.
+
+First we need to tell the rule what object or collection of objects is going to be evaluated. Rules have a very basic syntax, and basically consist of 3 parts:
+
+- the _When_ part defines the constraints of the rule. I.e. these are the discrimination criteria or conditions which, if they are met, cause the rule to fire.
+- the _Then_ part defines the actions the rule will execute when it fires. This can be for example setting specific data on a fact (in the Business Object Model), but this can also be inserting new, inferred, data into the rules engine. For example, based on a card holder's age, we can infer that he/she is an adult.
+- the _properties_ or _attributes_ part. Here we can set additional characteristics of the rule, for example the group of rules it belongs to.
+
+To create the rule, you:
 
 1. Select the project ccd-project in the space MySpace
 
     ![Business Central Asset CCD Project]({% image_path business-central-asset-ccd-project.png %}){:width="600px"}
 
-2. You will see the Domain Object Model as the only assets listed. Click on the blue button `Add Asset` on the right upper corner of the Library View.
+2. Click on the blue button `Add Asset` on the right upper corner of the Library View.
 
     ![Business Central CCD BOM Project]({% image_path business-central-ccd-bom-project.png %}){:width="600px"}
 
@@ -199,24 +212,24 @@ First we need to tell the rule what object or collection of objects is going to 
 
 5. Set the following data in the creation wizard:
 
-    - Name: `automated-chargeback`{{copy}}  
-    - Package: `com.myspace.ccd_project`{{copy}}
+    - Name: `automated-chargeback`
+    - Package: `com.myspace.ccd_project`
 
     ![Business Central Guided Rule New]({% image_path business-central-guided-rule-new.png %}){:width="600px"}
 
-6. Click ok. You should see a banner in green telling you that the asset was success fully created. The UI will display the wizard that allows you to author your rule.
+6. Click ok. You should see a banner in green telling you that the asset was success fully created. The UI will display the editor that allows you to author your rule.
 
     ![Business Central Guided Rule New Wizard]({% image_path business-central-guided-rule-new-wizard.png %}){:width="600px"}
 
-7. You will see 4 tabs in the wizard panel. Select the tab that says "Data Objects"
+7. You will see 4 tabs in the editor panel. Select the tab that says "Data Objects"
 
     ![Business Central Guided Rule Import Data Object]({% image_path business-central-guided-rule-import-data-object.png %}){:width="600px"}
 
-8. You should see 4 items listed: `AdditionalInformation`, `CreditCardHolder`, `FraudData`, and `Number`. These are shown by default as the rule is created in the same folder/package as these data objects. If `CreditCardHolder` is not lister, click on the blue _New Item_ button to import it.
+8. You should see 4 items listed: `AdditionalInformation`, `CreditCardHolder`, `FraudData`, and `Number`. These are shown by default as the rule is created in the same folder/package as these data objects. If `CreditCardHolder` is not listed, click on the blue _New Item_ button to import it.
 
     ![Business Central Guided Rule Import Data Object New]({% image_path business-central-guided-rule-import-data-object-new.png %}){:width="600px"}
 
-9. Return to the _Model_ tab and Click on the green cross to the right of the word _WHEN_.
+9. Return to the _Model_ tab and Click on the green plus-sign to the right of the word _WHEN_.
 
     ![Business Central Guided Rule New Fact]({% image_path business-central-guided-rule-new-fact.png %}){:width="600px"}
 
@@ -224,13 +237,13 @@ First we need to tell the rule what object or collection of objects is going to 
 
     ![Business Central Guided Rule New Fact Select]({% image_path business-central-guided-rule-new-fact-select.png %}){:width="600px"}
 
-    In order to match the criteria of the functional requirement, we need to add a restriction on one the card holder's properties. Automated chargeback is only approved for CC Holders that have the `status` _Gold_ or _Platinum_.
+    In order to match the criteria of the functional requirement, we need to add a restriction on one of the card holder's properties. Automated chargeback is only approved for CC Holders that have the `status` _Gold_ or _Platinum_.
 
-11. Click on the condition `There is a Credit Card Holder`, a new wizard will open. We are now going to add a restriction on a field, in this case the `status` of the CC Holder
+11. Click on the condition `There is a Credit Card Holder`, a new wizard will open. We are now going to _Add a restriction on a field_. From the dropdown box select the `status` field of the CC Holder.
 
     ![Business Central Guided Rule New Property Select]({% image_path business-central-guided-rule-new-property-select.png %}){:width="600px"}
 
-12. From the dropdown box we select that the status `is contained in the list`, and add the literal value of _Gold_ and _Platinum_, separated by a comma. TIP: You can also add enumerations containing these values to have them pre-populated for you.
+12. From the dropdown box we select that the status `is contained in the (comma separated) list`. Click on the pencil icon and add the literal values  _Gold_ and _Platinum_, separated by a comma. TIP: You can also add enumerations containing these values to have them pre-populated for you. Click on the _Save_ button to save the asset.
 
     ![Business Central Guided Rule New Property Select Values]({% image_path business-central-guided-rule-new-property-select-values.png %}){:width="600px"}
 
@@ -240,27 +253,27 @@ First we need to tell the rule what object or collection of objects is going to 
 
 14. When you want to modify the data in the objects of the Business Model or facts, you need to be able to reference the matched object from within the rule. To allow this, the object needs to be bound to a variable inside the rule. This makes the object accessible in both the left-hand-side (LHS) and  right-hand-side (RHS) through the variable. Click on the fact declaration `There is FraudData`, the wizard to modify the constraints will open.
 
-15. In the "Variable name" field at the bottom of the form, type `data`{{copy}} as the name of the variable that you want to bind the `FraudData` object to. Click on the _Set_ button.
+15. In the _Variable name_ field at the bottom of the form, type `data` as the name of the variable that you want to bind the `FraudData` object to. Click on the _Set_ button. Save the asset.
 
     ![Business Central Guided Rule Modify Fraud Data]({% image_path business-central-guided-rule-modify-fraud-data.png %}){:width="600px"}
 
-    Now we are going to set the property of automated chargeback to true on the `FraudData` object, so the dispute can be processed accordingly. Since this is the decision we are making, and thus the _action_ of the rule, we will define this as the THEN clause,  also known as the Right Hand Side (RHS) or Action section of our rule.
+Now we are going to set the property of automated chargeback to true on the `FraudData` object, so the dispute can be processed accordingly. Since this is the decision we are making, and thus the _action_ of the rule, we will define this as the THEN clause,  also known as the Right Hand Side (RHS) or Action section of our rule.
 
-    All of the information of the CC dispute is stored in facts. These facts can live in a session that the engine will keep in memory. So every time you evaluate a new fact, or change something to an existing fact, you will have all of the Objects in the session available in the process of decision making. In the RHS, or action, part of the rule you can change the values of any property on the objects that you can reference via the variables, or even create and add new objects/facts to the session (this is usually referred to as _inferring_ new data or information). Every time a property in an object changes, all of the decisions in which this property is used will be reevaluated to make sure that no other rule needs to be applied.
+All of the information of the CC dispute is stored in facts. These facts can live in a session that the engine will keep in memory. So every time you evaluate a new fact, or change something to an existing fact, you will have all of the Objects in the session available in the process of decision making. In the RHS, or action, part of the rule you can change the values of any property on the objects that you can reference via the variables, or even create and add new objects/facts to the session (this is usually referred to as _inferring_ new data or information). Every time a property in an object changes, all of the decisions in which this property is used will be reevaluated to make sure that no other rule needs to be applied.
 
-16. Click on the green arrow next to the _WHEN_ keyword. When the `Add new action` wizard opens select `Change field values of data`, select the variable that you created before, and click on `+ok`.
+1. Click on the green plus-sign next to the _THEN_ keyword. When the `Add new action` wizard opens select `Change field values of data` and click on _OK_. This will automatically select the `FraudData` object, as this is the only object we've bound to a variable.
 
     ![Business Central Guided Rule Modify Fraud Data Wizard]({% image_path business-central-guided-rule-modify-fraud-data-wizard.png %}){:width="600px"}
 
-17. Now we are going to set the value of the property `automated` to `true`, indicating that an automatic chargeback applies. Click on  the action `Set value of FraudData [data]` and select the field `automated`. Click on the pencil icon to the right and assign a literal value to the property.
+2. Now we are going to set the value of the property `automated` to `true`, indicating that an automatic chargeback applies. Click on  the action `Set value of FraudData [data]` and select the field `automated`. Click on the pencil icon to the right and assign a literal value to the property.
 
     ![Business Central Guided Rule Modify Fraud Automated]({% image_path business-central-guided-rule-modify-fraud-automated.png %}){:width="600px"}
 
-18. select `true` as the value for the automated property (this is the default value for booleans, so the property is probably already set to `true`). Note that since the type of data is boolean, you can only choose between `true` and `false`.
+3. select `true` as the value for the automated property (this is the default value for booleans, so the property is probably already set to `true`). Note that since the type of data is `boolean`, you can only choose between `true` and `false`.
 
     ![Business Central Guided Rule Modify Fraud Automated True]({% image_path business-central-guided-rule-modify-fraud-automated-true.png %}){:width="600px"}
 
-19. To validate that everything is correct, click on the _Validate_ button on the right and you should see a green "Item successfully validated!" message. Next, click on "Save" to save the rule.
+4. To validate that everything is correct, click on the _Validate_ button on the right and you should see a green "Item successfully validated!" message. Next, click on _Save_ to save the rule.
 
     ![Business Central Guided Rule Validate]({% image_path business-central-guided-rule-validate.png %}){:width="600px"}
 
@@ -276,4 +289,4 @@ DMN uses a language business friendly called FEEL or Friendly Enough Expression 
 
 ![Business Central DMN FEEL]({% image_path business-central-dmn-feel.png %}){:width="600px"}
 
-DMN is out of scope for this workshop. However, the specification provides and additional, interesting, and standard way to model and execute decisions in your business applications.
+DMN is out of scope for this workshop. However, the specification provides an additional, interesting, and standard way to model and execute decisions in your business applications.
