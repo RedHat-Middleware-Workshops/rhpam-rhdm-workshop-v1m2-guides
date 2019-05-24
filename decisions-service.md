@@ -1,10 +1,9 @@
 
-##Why a Decision Service?
+# Decision Services
 
-You will learn in this section:
+In this section you will learn:
 
-
-1- How to use the rules that you author on the last section.
+1- How to use the rules that you authored in the previous step.
 
 2- How can you expose your decisions as a service.
 
@@ -13,25 +12,23 @@ You will learn in this section:
 
 ##Understanding the deployment process
 
-In previous labs we have defined the Business Object Model and the rules and decisions that operate on the model. To import all of the assets back into your space you need to import the following repository. You can watch the video on how to import a repository into your workspace
+In previous labs we have defined the Business Object Model and the rules and decisions that operate on the model. If you've completed the labs in the previous steps, you can use your existing project. You can also import the project from this location in your workspace: [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3)
 
-1- Import the rest of the Domain Model by importing the project Domain Model CC Dispute  from the following repository:
+You can watch the video, that was provided earlier in the workshop, on how to import a repository into your workspace.
 
-https://github.com/MyriamFentanes/business-policies-decisions-scenario-step3.git
+We will now deploy the rules on to the Execution Server to process a Credit Card (CC) Dispute.
 
-Now we will deploy the rules to process a Credit Card (CC) Dispute.
+## Background
 
-##Background
-
-In previous sections we learned that Red Hat Process Automation Manager is a modular platform to develop and run decisions and processes. In the diagram below you can see that the component where you as a Business Domain Expert have been authoring your rules is Business Central for authoring, this is the web console with all the tooling for the different types of users. All the assets that you created are stored in a repository where they are versioned.
+In previous sections we've learned that Red Hat Process Automation Manager is a modular platform to develop and run decisions and processes. In the diagram below you can see that the component in which you, as a Business Domain Expert, have been authoring your rules is the Business Central Workbench. This is the web-based workbench that provides the tooling for the different types of users. All the assets that you create are stored in a repository (a Git-based version control system) where they are versioned.
 
 ![RHPAM 7 Architecture]({% image_path rhpam-7-architecture.png %}){:width="600px"}
 
-1- Go to your project library view and select the automated-chargeback rules, 1- once the editor opens click on the button Latest Version.
+1. Go to your project library view and select the automated-chargeback rule. Once the editor opens click on the button Latest Version.
 
 ![Business Central Chargeback Versions]({% image_path business-central-chargeback-versions.png %}){:width="600px"}
 
-2- There is also more metadata store on the repository about your assets, like the name of the user that created the asset, the time and data when it was last modified, etc.
+2- There is also more metadata about your assets stored in the repository, like the name of the user that created the asset, the time and data when it was last modified, etc.
 
 ![Business Central Chargeback Versions Detail]({% image_path business-central-chargeback-versions-detail.png %}){:width="600px"}
 
@@ -39,29 +36,28 @@ In previous sections we learned that Red Hat Process Automation Manager is a mod
 
 ![Business Central Chargeback Version]({% image_path business-central-chargeback-version.png %}){:width="600px"}
 
-##Packaging
+## Packaging
 
 After your project is developed, you can build the project in Business Central and deploy it to the configured Process Server, which is where the rules and processes execute. The Process Server is a component that allows things like distributed execution. If for example, the execution of the case rules will be performed at bank branches, you can deploy as many Process Servers as you need all connected to your Business Central Authoring console.
 
 
-1- Return to Home and select Deploy, you will see your server configurations, a server configuration is the template or blueprint  that holds the configuration of a group of Process Servers, there are 2 things that you configure through the template:
+1. Return to the Home screen of the Business Central workbench (by clicking on the _Home_ icon in the upper left screen). Click on _Deploy_. This will open the _Server Configurations_ perspective. A server configuration is the template, or blueprint, that defines the configuration of a group of Execution Servers (a group can contain zero or more execution servers). There are 2 things that you can configure through the template:
 
-   - Capabilities: What can you execute in your Process Server (Process, Decisions, Planner rules) they are not mutually exclusive.
-   - Deployment unit: what package of assets do you want to execute.
+    - Capabilities: What can you execute in your Process Server (Process, Decisions, Planner rules). They are not mutually exclusive. I.e. an execution server can be enabled with zero or more of these capabilities enabled.
+    - Deployment Unit: what package of assets (project, Knowledge JAR) you want to deploy on the server to make available for execution.
 
-The services in a project are published for use by sending a deployment unit to a configured Process Server. When you build and deploy a project in Business Central, the deployment unit is created automatically in the configured server. You can start, stop, or remove deployment units in Business Central as needed. You can also create additional deployment units from previously built projects and start them on existing or new Process Servers configured in Business Central.
+    The services in a project are published by sending a deployment request for a specific _Deployment Unit_ to a configured Execution Server. When you _Build and Deploy_ a project in Business Central, the _Deployment Unit_ (KJAR) is created and pushed to the asset repository (Maven). After this, a deployment request is sent to the Execution Server. The Execution Server will fetch the _Deployment Unit_ . You can start, stop, or remove deployment units in Business Central as needed. You can also create additional _Deployment Units_ from previously built projects and start them on existing or new Process Servers configured in Business Central.
+
+2. Return to the Home screen and select _Design_. Select your Credit Card Dispute project (`ccd-project`). The Library view will open with a list of all your assets. These assets will be compiled and packaged inside a _KJAR_ or _Deployment Unit_. Click on the _Deploy_ button in the top right corner.
+
+    ![Business Central Deploy]({% image_path business-central-deploy.png %}){:width="600px"}
+
+You will see that the project is first built, meaning the assets are compiled and packaged, and then deployed to a Execution Server container. Go back to the Home screen and elect Deploy. You will now see a container running with your newly created decisions.
 
 
-2- Return to Home and select Design. Select your project credit-card-dispute. The Library view will open with a list of all your assets. These assets will be compiled and packaged inside a kjar or deployment unit. Click on Deploy
+## Execution
 
-![Business Central Deploy]({% image_path business-central-deploy.png %}){:width="600px"}
-
-You will see that the project is first built, meaning the assets are compiled and packaged and then deployed to a Execution Server Container. Go back to Home and then select Deploy you will see now a container running with your new created decisions.
-
-
-##Execution
-
-1- Go to the Main Menu and select Deploy>Execution Services
+Go to the Main Menu and select Deploy>Execution Services
 
 ![Business Central Execution Services Detail]({% image_path business-central-execution-services-detail.png %}){:width="600px"}
 
