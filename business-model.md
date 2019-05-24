@@ -50,57 +50,57 @@ So, the first and very important task when automating a core business capability
 3. In this project you will see an application called `rhpam7-rhpamcentr`. Click on the box of this application to expand it. On the lower right-hand-side of this box you will see a section called `Routes - External Traffic`. Click on either the
 `http` or `https` route to access the RHPAM Business Central Workbench.
 
-![OpenShift Business Central Route]({% image_path openshift-business-central-route.png %}){:width="600px"}
+    ![OpenShift Business Central Route]({% image_path openshift-business-central-route.png %}){:width="600px"}
 
 4. Login to Business Central with the credentials u:`pamAdmin`, p:`redhatpam1!`
 
-![Business Central Console]({% image_path business-central-console.png %}){:width="600px"}
+    ![Business Central Console]({% image_path business-central-console.png %}){:width="600px"}
 
-2. Select Design from the main menu, you will be redirected to your working space, this is the sandbox for you to define your projects and within those projects assets.
+5. Select Design from the main menu, you will be redirected to your working space, this is the sandbox for you to define your projects and within those projects assets.
 
-3. Click on Add Project to create a new Project in your space called MySpace, when the Add Project wizard opens up type in
+6. Click on Add Project to create a new Project in your space called MySpace, when the Add Project wizard opens up type in
 `credit-card-dispute`{{copy}} as the name of the project, this project is your business boundary that encapsulates a business capability and then type
 `Assets to Automate credit card dispute process`{{copy}} as the description of your project.
 
-Once the creation of your project is complete you should see the following page with the project content, empty so far.
+    Once the creation of your project is complete you should see the following page with the project content, empty so far.
 
-![Business Central Asset Empty Project]({% image_path business-central-asset-empty-project.png %}){:width="600px"}
+    ![Business Central Asset Empty Project]({% image_path business-central-asset-empty-project.png %}){:width="600px"}
 
-4. In the upper right corner you will see a blue button called `Add Asset`. An asset is any Rule, Process, Decision Table, Data Object, Data Form, etc. Click on the `Add Asset` button and you will be presented with a catalog of the wizards to create assets.
+7. In the upper right corner you will see a blue button called `Add Asset`. An asset is any Rule, Process, Decision Table, Data Object, Data Form, etc. Click on the `Add Asset` button and you will be presented with a catalog of the wizards to create assets.
 
-![Business Central Asset Catalog]({% image_path business-central-asset-catalog.png %}){:width="600px"}
+    ![Business Central Asset Catalog]({% image_path business-central-asset-catalog.png %}){:width="600px"}
 
-5. Select the wizard for _Data Object_ from the catalog to create your business object model for the Credit Card Holder, type `CardHolder` {{copy}} as the name of the object and select com.myspace.ccd_project as the Package. Click OK
+8. Select the wizard for _Data Object_ from the catalog to create your business object model for the Credit Card Holder, type `CardHolder` {{copy}} as the name of the object and select com.myspace.ccd_project as the Package. Click OK
 
-![Business Central CCD Object]({% image_path business-central-CCD-object-new.png %}){:width="600px"}
+    ![Business Central CCD Object]({% image_path business-central-CCD-object-new.png %}){:width="600px"}
 
-6. You will see the new created object with no properties, lets click on the `+add field` button to start adding the properties to our CreditCardHolder.
+9. You will see the new created object with no properties, lets click on the `+add field` button to start adding the properties to our CreditCardHolder.
 
-![Business Central CCD Object New Empty]({% image_path business-central-CCD-object-new-empty.png %}){:width="600px"}
+    ![Business Central CCD Object New Empty]({% image_path business-central-CCD-object-new-empty.png %}){:width="600px"}
 
-7- Click  in the window for New Field create a new property with the following values:
+10. Click  in the window for New Field create a new property with the following values:
 
-Age `age`{{copy}}
+    Age `age`{{copy}}
 
-Identifier: `age`{{copy}}
+    Identifier: `age`{{copy}}
 
-Label: `Age`{{copy}}
+    Label: `Age`{{copy}}
 
-Description: `Age of the Credit Card Holder`{{copy}}
+    Description: `Age of the Credit Card Holder`{{copy}}
 
-Type: Integer
+    Type: Integer
 
-![Business Central CCD Object New Properties]({% image_path business-central-CCD-object-new-properties.png %}){:width="600px"}
+    ![Business Central CCD Object New Properties]({% image_path business-central-CCD-object-new-properties.png %}){:width="600px"}
 
-The first step to automate a process or decision is to define and specify the Business Object Model, here you just created the Entity Credit Card Holder, these entities will be used to store the information that you need to make decisions.
+    The first step to automate a process or decision is to define and specify the Business Object Model, here you just created the Entity Credit Card Holder, these entities will be used to store the information that you need to make decisions.
 
-Now you will import the rest of the Business Object Model from a predefined repository, once you had successfully imported it, examine the other entities in your project.
+    Now you will import the rest of the Business Object Model from a predefined repository, once you had successfully imported it, examine the other entities in your project.
 
-8- Watch the video on how to import a repository into your workspace.
+11. Watch the video on how to import a repository into your workspace.
 
-[Youtube Importing a project](https://youtu.be/LUOw1TrYDWs)
+    [Youtube Importing a project](https://youtu.be/LUOw1TrYDWs)
 
 
-9- Create the rest of the Domain Model by importing the project Domain Model CC Dispute  from the following repository:
+12. Create the rest of the Domain Model by importing the project Domain Model CC Dispute  from the following repository:
 
-https://github.com/MyriamFentanes/business-policies-decisions-scenario-step2.git
+    https://github.com/MyriamFentanes/business-policies-decisions-scenario-step2.git

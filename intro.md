@@ -9,4 +9,4 @@ In the labs, you will define the policies to solve a credit card dispute using d
 **Topics covered:** Rules, DRL, DMN, Decision tTables, OMG standards,  deploying your first assets, KJARs, and the REST API for rules and decisions.
 
 
-More information can be found at http://docs.redhat.com
+More information can be found at in our [documentation](http://docs.redhat.com).
