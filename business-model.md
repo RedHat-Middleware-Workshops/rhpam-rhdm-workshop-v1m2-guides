@@ -76,26 +76,24 @@ So, the first and very important task when automating a core business capability
 
     ![Business Central CCD Object New Empty]({% image_path business-central-CCD-object-new-empty.png %}){:width="600px"}
 
-10. Click  in the window for New Field create a new property with the following values:
+10. In the _New Field_ window, enter the following values and click on _Create_:
 
-
-    Age `age`
-    Identifier: `age`
-    Label: `Age`
-    Description: `Age of the Credit Card Holder`
-    Type: Integer
+    - Id: `age`
+    - Label: `Age`
+    - Type: `Integer`
 
     ![Business Central CCD Object New Properties]({% image_path business-central-CCD-object-new-properties.png %}){:width="600px"}
 
-    The first step to automate a process or decision is to define and specify the Business Object Model, here you just created the Entity Credit Card Holder, these entities will be used to store the information that you need to make decisions.
 
-    Now you will import the rest of the Business Object Model from a predefined repository, once you had successfully imported it, examine the other entities in your project.
+The first step to automate a process or decision is to define and specify the Business Object Model. In this exercise you've created the Entity `CreditCardHolder` and defined it's `age` field. These entities will be used to store the information that you need to make decisions and drive process execution.
 
-11. Watch the video on how to import a repository into your workspace.
+You will now import the rest of the Business Object Model from a predefined repository. Once you have successfully imported it, examine the other entities in your project.
+
+1. Watch the video on how to import a repository into your workspace.
 
     [Youtube Importing a project](https://youtu.be/LUOw1TrYDWs)
 
 
-12. Create the rest of the Domain Model by importing the project Domain Model CC Dispute  from the following repository:
+2. Go back to your space overview screen by clicking on the `MySpace` link in the breadcrumb navigation in the top-left of your screen. Create the rest of the Domain Model by importing the project Domain Model CC Dispute  from the following repository:
 
-    https://github.com/MyriamFentanes/business-policies-decisions-scenario-step2.git
+    https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git
