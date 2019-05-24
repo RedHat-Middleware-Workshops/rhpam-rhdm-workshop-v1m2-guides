@@ -77,25 +77,24 @@ A very common way to define the logic behind risk assessment is to store this in
     - _Source_: Is the actual source code that is generated from the Decision Table Model. In the runtime engine, decision tables are translated into native DRL (Drools Rule Language), where each row in the table is translated into a rule.
     - _Data Objects_: Lists the Business Objects available to the editor to be used as conditions and/or actions.
 
-<br/>
     In our system, the properties evaluated to determine the risk scoring are:
 
     - Status of the Credit Card Holder
     - Total Amount disputed from the Fraud Data
-<br/>
+
     Let's add the Credit Card Holder condition column
 
-5. Go to the columns tab and click on the button `Insert Column`, Select `Add Condition` and click Next.
+5. Go to the _Columns_ tab and click on the button `Insert Column`, select `Add Condition` and click Next.
 
     ![Business Central Add Condition]({% image_path business-central-add-condition.png %}){:width="600px"}
 
-6. We need to define which object is going to be evaluated. Click on `Create new Fact Pattern`. Select `CreditCardHolder` as the Fact type and define a variable called `holder`{{copy}} as the _Binding_. Click _Next_.
+6. We need to define which object is going to be evaluated. Click on `Create new Fact Pattern`. Select `CreditCardHolder` as the _Fact type_ and define a variable called `holder` as the _Binding_. Click _Next_.
 
     ![Business Central Create Pattern]({% image_path business-central-create-pattern.png %}){:width="600px"}
 
 7. The calculation type is the type of evaluation that we are going to apply. In this case it will be against literal values. Select `Literal value` and click _Next_.
 
-8. Select the field `status` and click _Next_.
+8. We want to define a constraint on the card holder's status, so we select the `status` field and click _Next_.
 
     ![Business Central Create Pattern Field]({% image_path business-central-create-pattern-field.png %}){:width="600px"}
 
@@ -103,13 +102,15 @@ A very common way to define the logic behind risk assessment is to store this in
 
     ![Business Central Create Pattern Field Operator]({% image_path business-central-create-pattern-field-operator.png %}){:width="600px"}
 
-10. Since there are only 3 possible status, we are going to configure the _Value list_ with the following values, set the _Default value_ to `Standard` and then click Next.
+10. Since there are only 3 possible status, we are going to configure the _Value list_ with the following values:
 
-    `"Standard,Silver,Gold"`
+    `Standard,Silver,Gold`
+
+    Set the _Default value_ to `Standard` and then click Next.
 
     ![Business Central Create Pattern Field Values]({% image_path business-central-create-pattern-field-values.png %}){:width="600px"}
 
-11. We can now configure the label of the column
+11. We can now configure the header of the column
 
     Header: `Status`
 
@@ -118,9 +119,11 @@ A very common way to define the logic behind risk assessment is to store this in
     ![Business Central Create Pattern Field Header]({% image_path business-central-create-pattern-field-header.png %}){:width="600px"}
 
 12. Repeat the same steps to add 2 more columns:
-    - Pattern: `FraudData`
-    - Calculation Type: Literal value
-    - property: `totalFraudAmount`{{copy}}
+    - Pattern:
+        - Fact type: `FraudData`
+        - Binding: `data`
+    - Calculation Type: `Literal value`
+    - property: `totalFraudAmount`
     - operation:
         - `greater than` for one column. Use header name: "Minimum Amount"
         - `less than or equal to` for the second column. Use header nam "Maximum Amount"
@@ -131,13 +134,13 @@ A very common way to define the logic behind risk assessment is to store this in
 
     ![Business Central Decision Table Columns]({% image_path business-central-decision-table-columns.png %}){:width="600px"}
 
-13. Next go to the `Columns` tab and Click on `Insert Column`. This time we are adding an action, the Right-Hand-Side of a rule, that will be fired if the conditions are met. Select `Set the value of a field` and click next.
+13. Next go to the `Columns` tab and Click on `Insert Column`. This time we are adding an Action, the Right-Hand-Side of a rule. This action will be fired when the conditions are met. Select `Set the value of a field` and click next.
 
 14. We want to set the risk scoring property of the `FraudData` object. So in the dropdown menu select the object `FraudData` bound to the variable `data`.Click Next.
 
     ![Business Central Decision Table Columns Action Data]({% image_path business-central-decision-table-columns-action-data.png %}){:width="600px"}
 
-15.  Select the field `disputeRiskData` and click Next. We don't have a list of values so click Next. Type `Risk Scoring`{{copy}} as the header for the column and click Finish.
+15.  Select the field `disputeRiskRating` and click Next. We don't have a list of values so click Next. Type `Risk Scoring` as the header for the column and click Finish.
 
     ![Business Central Decision Table Columns Action Data Finish]({% image_path business-central-decision-table-columns-action-data-finish.png %}){:width="600px"}
 
@@ -151,11 +154,11 @@ A very common way to define the logic behind risk assessment is to store this in
 
     There are 4 levels of risk: low, medium, high and very-high. We will defined these risk-levels as integers: 1,2,3, and 4.
 
-    Click on the button Insert and select append row from the dropdown menu.
+17. Click on the button Insert and select append row from the dropdown menu.
 
      ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-append-row.png %}){:width="600px"}
 
-     Click on the Description cell of the new row and type "_Low risk standard costumer_". Use the following values for the other columns:
+18. Click on the Description cell of the new row and type "_Low risk standard costumer_". Use the following values for the other columns:
 
      - Description:`Low risk standard costumer`{{copy}}  
      - Status:`Standard`{{copy}}  
@@ -167,7 +170,7 @@ A very common way to define the logic behind risk assessment is to store this in
 
     ![Business Central Decision Table First Row]({% image_path business-central-decision-table-first-row.png %}){:width="600px"}
 
-    Apply the same procedure for the rest of the rules. At the end you should have something like the following:
+    Apply the same procedure for the rest of the rules. At the end your decision table should look as follows:
 
     ![Business Central Decision Table First Row]({% image_path business-central-decision-table-complete.png %}){:width="600px"}
 
