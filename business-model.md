@@ -80,14 +80,11 @@ So, the first and very important task when automating a core business capability
 
 10. Click  in the window for New Field create a new property with the following values:
 
-    Age `age`{{copy}}
 
-    Identifier: `age`{{copy}}
-
-    Label: `Age`{{copy}}
-
-    Description: `Age of the Credit Card Holder`{{copy}}
-
+    Age `age`
+    Identifier: `age`
+    Label: `Age`
+    Description: `Age of the Credit Card Holder`
     Type: Integer
 
     ![Business Central CCD Object New Properties]({% image_path business-central-CCD-object-new-properties.png %}){:width="600px"}
