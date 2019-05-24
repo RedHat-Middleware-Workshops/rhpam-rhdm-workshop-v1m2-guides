@@ -77,13 +77,12 @@ A very common way to define the logic behind risk assessment is to store this in
     - _Source_: Is the actual source code that is generated from the Decision Table Model. In the runtime engine, decision tables are translated into native DRL (Drools Rule Language), where each row in the table is translated into a rule.
     - _Data Objects_: Lists the Business Objects available to the editor to be used as conditions and/or actions.
 
-
+<br/>
     In our system, the properties evaluated to determine the risk scoring are:
 
     - Status of the Credit Card Holder
     - Total Amount disputed from the Fraud Data
-
-
+<br/>
     Let's add the Credit Card Holder condition column
 
 5. Go to the columns tab and click on the button `Insert Column`, Select `Add Condition` and click Next.
