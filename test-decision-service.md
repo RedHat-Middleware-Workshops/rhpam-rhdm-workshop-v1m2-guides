@@ -60,7 +60,9 @@ In the previous exercise, we used the _Test Scenario_ tooling to test the rules 
 
 ![ReactJS App]({% image_path reactjs-app.png %}){:width="600px"}
 
-Access the application at: http://react-web-app-rhpam7-workshop.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].http-proxy.katacoda.com/docs
+To access the application, login to your your project in the [OpenShift Console]({{ OPENSHIFT_CONSOLE_URL }}). In your project, you will see an application called _react-weba-app_. Click on the application to open the detailed view. In the lower right of you will find the route to the application. Click on the `http` link.
+
+![OpenShift Console ReactJS App]({% image_path test-reactjs-webapp-openshift-console.png %}){:width="600px"}
 
 Enter the following details:
 - Name: Jim
