@@ -16,7 +16,7 @@ Red Hat Process Automation Manager contains a sophisticated _Test Scenario_, in 
 
 4. In the editor, click on the _Data Objects_ tab. If everything is correct, there should be 3 data types listed: `AdditionalInformation`, `CreditCardHolder` and `FraudData`.
 
-5. Go back to the _Model_ tab. To test our rules, we need to provide the input data and the expected output. Our decision table operates on 2 datatypes, `CreditCardHolder` and `FraudData`. We therefore first need to create a column for our `CreditCardHolder` in the _Given_ part of the scenario testing table. Click on the _INSTANCE 1_ field in the table. On the right-hand-side of the editor, expand the _Data Object_ `CreditCardHolder`, select the `status` field and click on the _Add_ button.
+5. Go back to the _Model_ tab. To test our rules, we need to provide the input data and the expected output. Our decision table operates on 2 datatypes, `CreditCardHolder` and `FraudData`. We therefore first need to create a column for our `CreditCardHolder` in the _Given_ part of the scenario testing table. Click on the _INSTANCE 1_ cell in the table. On the right-hand-side of the editor, in the _Test Tools_ panel, expand the _Data Object_ `CreditCardHolder`, select the `status` field and click on the _Add_ button.
 
     ![Test Scenario Add Given CCH Status]({% image_path test-scenario-add-given-cch-status.png %}){:width="600px"}
 
@@ -26,7 +26,32 @@ Red Hat Process Automation Manager contains a sophisticated _Test Scenario_, in 
 
     ![Test Scenario Given Insert Column Right]({% image_path test-scenario-given-insert-column-right.png %}){:width="600px"}
 
-7.
+7. Click on either the cell with the word `INSTANCE` or `PROPERTY`, and in the _Test Tools_ panel, expand _Data Object_ `FraudData`, and select the field `totalFraudAmount`. Click on the _Add_ button.
+
+8. Now that we have configured the 2 columns that define our input data, we can now configure the column in which we can set our expected result. Click on either the `INSTANCE` or `PROPERTY` cell in the `EXPECT` cell. In the _Test Tools_ panel on the right, expand the `FraudData` object, select the `disputeRiskRating` field, and click _Add_.
+
+    ![Test Scenario Table Configured]({% image_path test-scenario-table-configured.png %}){:width="600px"}
+
+9. With the table configured, we can now start adding our test-cases. Add a row with the following values:
+    - Given:
+        - CreditCardHolder.status: `Standard`
+        - FraudData.totalFraudAmount: `42`
+    - Expect:
+        - FraudData.disputeRiskRating: `0`
+
+    ![Test Scenario First Test]({% image_path test-scenario-first-test.png %}){:width="600px"}
+
+10. Run the test by click on the _Play_ button in the top menu (next to the _Close_ button). If everything is correct, the test will run and the result will be shown.
+
+11. Add some additional tests to complete your scenario tesing, for example:
+    - Given:
+        - CreditCardHolder.status: `Gold`
+        - FraudData.totalFraudAmount: `863`
+    - Expect:
+        - FraudData.disputeRiskRating: `2`
+
+    ![Test Scenario Two Test]({% image_path test-scenario-two-test.png %}){:width="600px"}
+
 
 
 ## Test via Web Application
