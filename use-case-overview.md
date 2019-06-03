@@ -10,7 +10,7 @@ The cost of processing a credit card dispute is very high, and also critical fro
 
 Usually the credit card holder is stressed to protect the assets trusted to the bank, therefore one of the requirements for the interaction with the dispute system is the constant feedback to the customer, informing the latest status of the dispute. E.g., who is currently processing the dispute, is additional information from the customer required, has the dispute been automatically accepted, has something gone wrong with the dispute, etc.
 
-Most of the complexity with the CC Dispute process comes from the fact that is a multi-step process where every dispute is a one-off situation, the actual outcome of the dispute is a result of  the interactions between the different actors and the decision logic. On top of that, the information regarding the case, has to be the input and output of every interaction, everybody need to look at the same data and be observers of changes in it.
+Most of the complexity with the CC Dispute process comes from the fact that is a multi-step process where every dispute is a one-off situation, the actual outcome of the dispute is a result of the interactions between the different actors and the decision logic. On top of that, the information regarding the case should be available with every interaction. Everyone needs to look at the same data and be observers of changes in it.
 
 The actors that we can identify are:
 
@@ -38,19 +38,17 @@ The basic steps are:
 
 1- _The Credit Card Holder starts a dispute with the CC Issuer._
 
-2- _The CC Issuer needs to decide what type of processing is required for the dispute (automated chargeack or normal processing).Jump to step 3.1. or 3.2._
+2- _The CC Issuer needs to decide what type of processing is required for the dispute (automated chargeback or normal processing).Jump to step 3.1. or 3.2._
 
 3.1- _The CC Issuer process the automated chargeback. Jump  to step 5.1._
 
-3.2 - _The CC Issuer needs to do standard processing, contact the Card Processing network to start the dispute, the Credit Processing Network then contacts the CC Acquirer that requests evidence to the merchant and a formal response to the dispute._
+3.2 - _The CC Issuer needs to do standard processing. A risk assessment for the dispute is required._
 
-3.3 - _The Merchant send the evidence and response to the CC Issuer_
-
-4- _The CC Issuer assess the risk of the dispute._
+4 - _Based on the provided data (credit card holder status, dispute amount, etc.), CC Issuer assesses the risk of the dispute._
 
 4.1- _The CC Issuer requests a manual approval for the dispute from a knowledge worker. Jump to step 5.1. or 5.2_
 
-4.2- _The CC Issuer based on the data resolves the case. Jump to step 5.1. or 5.2_
+4.2- _The CC Issuer based on the data resolves the case by either accepting or rejecting the dispute. Jump to step 5.1. or 5.2_
 
 5.1- _The dispute is accepted and the money reimbursed to the CC Holder and the backoffice chargeback for fee transactions started_
 
@@ -64,27 +62,21 @@ The basic steps are:
 ### Business Requirements:
 
 
-There are two points in the process where depending on a business decision, the processing path bifurcates. The decision making is right now subjective, as a human - in this case a CC Issuer agent- is responsible  to reach a conclusion based on his/her individual knowledge.
+There is a point in the process where, depending on a business decision, the processing path bifurcates. The decision making is right now subjective, as a human - in this case a CC Issuer agent- is responsible  to reach a conclusion based on his/her individual knowledge.
 
-Hence there are two decision's sets that change the overall processing making: One set that determines whether the dispute can be qualified for automated chargeback, and a set that determines the risk of the dispute for manual approval and resolution.
+Hence there is a decision set that changes the overall processing: the set that determines whether the dispute can be qualified for automated chargeback.
 
-For the first scenario, going back and forth in the whole processing chain as shown in the picture, is costly for all the parties involved, plus the amount of the dispute can be less than the cost of processing the dispute, in addition to that the CC Issuer can offer automated chargeback to it's highly loyal customers.
+In this use-case, going back and forth in the whole processing chain as shown in the picture, is costly for all the parties involved, plus the amount of the dispute can be less than the cost of processing the dispute, in addition to that the CC Issuer can offer automated chargeback to it's highly loyal customers.
 
 ![CC Dispute Processing Backoffice]({% image_path business-central-cc-dispute-processing-backoffice-processing.png %}){:width="600px"}
 
-So the first bifurcation point gives Pecunia corp the ability to gain loyalty with strategic customers and avoid cost, this scenario is Automatic vs Standard Processing. The following diagram describes the scenario:
+So the bifurcation point gives Pecunia corp the ability to gain loyalty with strategic customers and avoid cost. this scenario is Automatic vs Standard Processing. The following diagram describes the scenario:
 
 ![CC Dispute Processing Automated Chargeback]({% image_path business-central-cc-dispute-processing-automated-chargeback.png %}){:width="600px"}
 
-The second use case has the decisions to determine the risk of the transaction and if a manual approval is required.
+The decision point in the process is used to determine the risk of the transaction, which is data that will be used when manual approval is required.
 
 ![CC Dispute Processing Manual Standard Processing]({% image_path business-central-cc-dispute-processing-manual-standard-processing.png %}){:width="600px"}
-
-Once that is decided that the dispute will be processed in a standard way, by contacting all the chain of CC transaction processing (3) we have the next bifurcation in step 4 of the processing, based on the case information we need too determine if a dispute needs a manual approval, to such effect  we have the following rule:
-
-_Every amount larger than 1000 should be manually approved._
-
-An also at this point we need to determine the risk profile of the dispute, this risk scoring will be part of the input for both the manual approval path and the automated resolution.
 
 The risk of the transaction is determined by the status of customer and the amount of the dispute:
 
