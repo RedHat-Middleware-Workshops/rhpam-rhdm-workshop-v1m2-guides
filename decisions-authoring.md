@@ -144,7 +144,7 @@ A very common way to define the logic behind risk assessment is to store this in
 
 16.  Select the field `disputeRiskRating` and click Next. We don't have a list of values so click Next. Type `Risk Scoring` as the header for the column and click Finish.
 
-    ![Business Central Decision Table Columns Action Data Finish]({% image_path business-central-decision-table-columns-action-data-finish.png %}){:width="600px"}
+    ![Decision Table Columns Action Data Finish]({% image_path business-central-decision-table-columns-action-data-finish.png %}){:width="600px"}
 
 17. Click on the _Save_ button to save the decision table.
 
