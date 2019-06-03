@@ -148,7 +148,6 @@ A very common way to define the logic behind risk assessment is to store this in
 
 17. Click on the _Save_ button to save the decision table.
 
-
 18. Go back to your `Model` tab, which should show the following decision table.
 
     ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-columns-action-data-finish-model.png %}){:width="600px"}
