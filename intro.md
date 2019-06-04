@@ -6,7 +6,7 @@ In this scenario you will be introduced to policies, decisions and rules, why th
 
 In the labs, you will define the policies to solve a credit card dispute using different approaches like Decision tables and Spreadsheets, DMN, and technical rules. Once deployed you will expose these rules and decisions as a service, accessible through API’s,
 
-**Topics covered:** Rules, DRL, DMN, Decision tTables, OMG standards,  deploying your first assets, KJARs, and the REST API for rules and decisions.
+**Topics covered:** Rules, DRL, DMN, Decision Tables, OMG standards,  deploying your first assets, KJARs, and the REST API for rules and decisions.
 
 
 More information can be found at in our [documentation](http://docs.redhat.com).
