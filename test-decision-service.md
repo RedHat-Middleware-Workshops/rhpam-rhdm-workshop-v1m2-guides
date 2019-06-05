@@ -48,7 +48,7 @@ Red Hat Process Automation Manager contains a sophisticated _Test Scenario_, in 
         - CreditCardHolder.status: `Gold`
         - FraudData.totalFraudAmount: `863`
     - Expect:
-        - FraudData.disputeRiskRating: `2`
+        - FraudData.disputeRiskRating: `1`
 
     ![Test Scenario Two Test]({% image_path test-scenario-two-test.png %}){:width="600px"}
 
@@ -60,7 +60,7 @@ In the previous exercise, we used the _Test Scenario_ tooling to test the rules 
 
 ![ReactJS App]({% image_path reactjs-app.png %}){:width="600px"}
 
-To access the application, login to your your project in the [OpenShift Console]({{ OPENSHIFT_CONSOLE_URL }}). In your project, you will see an application called _react-weba-app_. Click on the application to open the detailed view. In the lower right of you will find the route to the application. Click on the `http` link.
+To access the application, login to your your project in the [OpenShift Console]({{ OPENSHIFT_CONSOLE_URL }}). In your project, you will see an application called _react-web-app_. Click on the application to open the detailed view. In the lower right of you will find the route to the application. Click on the `http` link.
 
 ![OpenShift Console ReactJS App]({% image_path test-reactjs-webapp-openshift-console.png %}){:width="600px"}
 
