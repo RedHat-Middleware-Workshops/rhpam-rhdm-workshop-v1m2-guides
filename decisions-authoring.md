@@ -163,13 +163,13 @@ A very common way to define the logic behind risk assessment is to store this in
 
      ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-append-row.png %}){:width="600px"}
 
-20. Click on the _Description_ cell of the new row and type "_Low risk standard costumer_". Use the following values for the other columns:
+20. Click on the _Description_ cell of the new row and type "_Standard costumer low risk_". Use the following values for the other columns:
 
-     - Description:`Low risk standard costumer`{{copy}}  
+     - Description:`Standard costumer low risk`{{copy}}  
      - Status:`Standard`{{copy}}  
      - Minimum Amount:`0`{{copy}}  
      - Max Amount:`100`{{copy}}  
-     - Risk Scoring:`1`{{copy}}
+     - Risk Scoring:`0`{{copy}}
 
     Your decision table should look like this. Click Save.
 
