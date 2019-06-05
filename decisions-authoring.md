@@ -32,13 +32,14 @@ The rules defined for the process are:
 
 - The risk of the transaction is determined by the type of user and the amount of the dispute
 
-      - Standard customer 0-100 risk low risk
-      - Standard customer 100-500 medium
-      - Standard customer anything above 500 high
-      - Gold customer anything less than 500 low risk
-      - Gold customer anything more than 800 high risk
-      - Silver customer anything between 250-500 medium risk
-      - Silver customer anything below 250  low risk
+      - Standard customer 0-100: low risk
+      - Standard customer 100-500: medium risk
+      - Standard customer above 500: high risk
+      - Silver customer 0-250: low risk
+      - Silver customer 250-500: medium risk
+      - Silver customer above 500: high risk
+      - Gold customer 0-500: low risk
+      - Gold customer above 500: medium risk
 
 - If the customer's billing address is in the state of Texas, California or Florida, the dispute should be considered of higher risk.
 
