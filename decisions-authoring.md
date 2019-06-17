@@ -9,12 +9,10 @@ In this section you will learn:
 
 3. How to use your automated decisions and rules.
 
-
 Solving a credit card dispute depends on several variables, like:
 
 - The type of customer
 - The amount of the dispute
-
 
 The knowledge of how to apply these rules and decisions is tacit and lives only in the head of other domain experts like you. In order to automate the process, you will first have to express the business policies that determine how a dispute is handled in the form of rules.
 
@@ -22,7 +20,7 @@ For this particular case, 2 sets of rules are defined for different stages on th
 
 ## Calculating the Risk
 
-At the moment, all processing is manual. There is a group of agents dedicated to making decisions based on the data of the dispute. This is not only expensive, but also very prone to error and inconsistent.
+At the moment, all processing is manual. There is a group of agents dedicated to making decisions based on the data of the dispute. This is not only expensive, but also very prone to errors and inconsistencies.
 
 The cost of processing a dispute for Pecunia Corp. is high and independent of the amount that is being disputed. That is why it's very important to have flexible rules that reduce the processing cost and time. Apart from reducing cost, this will also improve customer experience.
 
@@ -89,7 +87,7 @@ A very common way to define the logic behind risk assessment is to store this in
 
     ![Business Central Add Condition]({% image_path business-central-add-condition.png %}){:width="600px"}
 
-6. We need to define which object is going to be evaluated. Click on `Create new Fact Pattern`. Select `CreditCardHolder` as the _Fact type_ and define a variable called `holder` as the _Binding_. Click _Next_.
+6. We need to define which object is going to be evaluated. Click on `Create new Fact Pattern`. Select `CreditCardHolder` as the _Fact type_ and define a variable called `holder` as the _Binding_. Click _Ok_ to dismiss the fact pattern dialog, then click _Next_.
 
     ![Business Central Create Pattern]({% image_path business-central-create-pattern.png %}){:width="600px"}
 
@@ -107,7 +105,7 @@ A very common way to define the logic behind risk assessment is to store this in
 
     `Standard,Silver,Gold`
 
-    Set the _Default value_ to `Standard` and then click Next.
+    Set the _Default value_ to `Standard` and then click _Next_.
 
     ![Business Central Create Pattern Field Values]({% image_path business-central-create-pattern-field-values.png %}){:width="600px"}
 
@@ -163,9 +161,9 @@ A very common way to define the logic behind risk assessment is to store this in
 
      ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-append-row.png %}){:width="600px"}
 
-20. Click on the _Description_ cell of the new row and type "_Standard costumer low risk_". Use the following values for the other columns:
+20. Click on the _Description_ cell of the new row and type "_Standard customer low risk_". Use the following values for the other columns:
 
-     - Description:`Standard costumer low risk`{{copy}}  
+     - Description:`Standard customer low risk`{{copy}}  
      - Status:`Standard`{{copy}}  
      - Minimum Amount:`0`{{copy}}  
      - Max Amount:`100`{{copy}}  
@@ -196,15 +194,15 @@ First we need to tell the rule what object or collection of objects is going to 
 
 To create the rule, you:
 
-1. Select the project ccd-project in the space MySpace
+1. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
 
-    ![Business Central Asset CCD Project]({% image_path business-central-asset-ccd-project.png %}){:width="600px"}
+    ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="600px"}
 
 2. Click on the blue button `Add Asset` on the right upper corner of the Library View.
 
     ![Business Central CCD BOM Project]({% image_path business-central-ccd-bom-project.png %}){:width="600px"}
 
-3. Int the "Add Asset" screen, select "Decision" from the drop-down filter menu to filter on decision assets.
+3. In the _Add Asset_ screen, select _Decision_ from the drop-down filter menu to filter on decision assets.
 
     ![Business Central Add Assets Filter]({% image_path business-central-add-assets-filter.png %}){:width="600px"}
 
@@ -273,7 +271,7 @@ All of the information of the CC dispute is stored in facts. These facts can liv
 
     ![Business Central Guided Rule Modify Fraud Automated True]({% image_path business-central-guided-rule-modify-fraud-automated-true.png %}){:width="600px"}
 
-4. To validate that everything is correct, click on the _Validate_ button on the right and you should see a green "Item successfully validated!" message. Next, click on _Save_ to save the rule.
+4. To validate that everything is correct, click on the _Validate_ button on the top navigation bar and you should see a green "Item successfully validated!" message. Next, click on _Save_ to save the rule.
 
     ![Business Central Guided Rule Validate]({% image_path business-central-guided-rule-validate.png %}){:width="600px"}
 

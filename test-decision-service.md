@@ -50,9 +50,7 @@ Red Hat Process Automation Manager contains a sophisticated _Test Scenario_, in 
     - Expect:
         - FraudData.disputeRiskRating: `1`
 
-    ![Test Scenario Two Test]({% image_path test-scenario-two-test.png %}){:width="600px"}
-
-
+    ![Test Scenario Two Test]({% image_path test-scenario-two-tests.png %}){:width="600px"}
 
 ## Test via Web Application
 
@@ -60,21 +58,18 @@ In the previous exercise, we used the _Test Scenario_ tooling to test the rules 
 
 ![ReactJS App]({% image_path reactjs-app.png %}){:width="600px"}
 
-To access the application, login to your your project in the [OpenShift Console]({{ OPENSHIFT_CONSOLE_URL }}). In your project, you will see an application called _react-web-app_. Click on the application to open the detailed view. In the lower right of you will find the route to the application. Click on the `http` link.
+To access the application, go back to your Lab Information page & click the link for **ReactJS Web Application**. Once it comes up, enter the following details:
 
-![OpenShift Console ReactJS App]({% image_path test-reactjs-webapp-openshift-console.png %}){:width="600px"}
+- **Name:** Jim
+- **Age:** 52
+- **Status:** Gold
+- **Description:** Delta Airlines
+- **Amount:** 1000
 
-Enter the following details:
-- Name: Jim
-- Age: 52
-- Status: Gold
-- Description: Delta Airlines
-- Amount: 1000
-
-Next, click on the _Submit_ button. The application will send a RESTful request to the Decision Server. If everything is working correctly,m the Decision Server will send a result that will be displayed in the application:
+Next, click on the _Submit_ button. The application will send a RESTful request to the Decision Server. If everything is working correctly, the Decision Server will send a result that will be displayed in the application:
 
 ![ReactJS App Request Response]({% image_path reactjs-app-request-response.png %}){:width="600px"}
 
-We can see that the `riskRating` has been set to **2** and the transaction is eligible for automated processing. Feel free to test your Decision Service with different values to see if all the use-cases you've implemented in your rules are covered.
+We can see that the `riskRating` has been set to **1** and the transaction is eligible for automated processing. Feel free to test your Decision Service with different values to see if all the use-cases you've implemented in your rules are covered.
 
 We have now successfully tested our decision service. In the next step we will take a closer look at the RESTful API exposed by the service, and we will see how we can test the services via the API documentation page.

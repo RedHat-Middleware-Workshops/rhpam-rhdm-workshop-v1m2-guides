@@ -4,9 +4,19 @@ In the previous step we've interacted with the Decision Service via a web-applic
 
 Swagger provides a standard way to describe and document RESTful APIs. The RESTful API of the PAM execution server allows other platforms, for example rich browser applications, or other middleware systems, to easily communicate with the execution server using open standards.
 
-To access the Swagger page of the execution server, navigate to: http://rhpam7-workshop-kieserver-rhpam7-workshop.[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].http-proxy.katacoda.com/docs
+To access the Swagger page of the execution server, we first need to get the URL for the execution server.
 
-You will see the following page.
+1. In the Business Central console, click on the home icon at the top.
+
+2. Click on _Deploy_ and click on the execution server
+
+    ![Execution Servers Home]({% image_path business-central-execution-server.png %}){:width="600px"}
+
+3. Copy just the hostname part of the execution server URL
+
+    ![Execution Server Hostname]({% image_path business-central-execution-server-url.png %}){:width="600px"}
+
+4. Open a new browser tab, paste in the hostname from step 3 and append the path `/docs`. In the above screenshot the full URL would be http://rhpam7-kieserver-rhpam-user4.apps.anywhere-98a1.openshiftworkshop.com:80/docs. You will see the following page
 
 ![KIE Server Swagger]({% image_path kie-server-swagger.png %}){:width="600px"}
 
@@ -63,7 +73,7 @@ Finally, we provide the body of the request. In the body we pass the data, based
 
 We can see that we pass in the `FraudData`, with a `totalFraudAmount` of 1000.0. We also pass in the `CreditCardHolder` with a *Gold* status.
 
-When we've entered our data, click on the blue *Execute* button to fire the request. When the browser ask for a username and password, use username: `developer`{{copy}} and password: `developer`{{copy}}:
+When we've entered our data, click on the blue *Execute* button to fire the request. If the browser asks for a username and password, use the same username/password you used to log into Business Central
 
 ![Swaggger Request]({% image_path swagger-request.png %}){:width="600px"}
 
