@@ -10,14 +10,13 @@ You will see the following page.
 
 ![KIE Server Swagger]({% image_path kie-server-swagger.png %}){:width="600px"}
 
-In this page, navigate to the section that says **Rules evaluation :: BRM**, and click on the green bar that says *POST /server/containers/instances/{id}
-Evaluates rules by executing commands on the rule session*. This will show the API description of this RESTful operation. Click on the *Try it out* button at the right of the panel, this will allow you to enter the values of the request. First we change the *Parameter content type* and the *Response content type* from `application/xml` to `application/json`:
+In this page, navigate to the section that says **KIE session assets**, and click on the green bar that says *POST /server/containers/instances/{containerId} Executes one or more runtime commands*. This will show the API description of this RESTful operation. Click on the *Try it out* button at the right of the panel, this will allow you to enter the values of the request. First we change the *Parameter content type* and the *Response content type* from `application/xml` to `application/json`:
 
 ![Swaggger Application JSON]({% image_path swagger-application-json.png %}){:width="600px"}
 
 This specifies the dataformat that we will be using for our request and response. In this case this is the JSON format.
 
-Next we need to specify the container-id that contains the deployment of the rules that we want to evaluate. The name of our container is `ccd-project_1.0.0`{{copy}}.
+Next we need to specify the container-id that contains the deployment of the rules that we want to evaluate. The name of our container is `ccd-project_1.0.0-SNAPSHOT`{{copy}}.
 
 Finally, we provide the body of the request. In the body we pass the data, based on our domain model or business model, om which we evaluate the rules. Paste the following request body into the *body* text-area in the panel:
 
