@@ -3,18 +3,38 @@
 
 In this section you will learn:
 
-1- How to use the rules that you authored in the previous step.
+1. How to use the rules that you authored in the previous step.
 
-2- How can you expose your decisions as a service.
+2. How can you expose your decisions as a service.
 
-3- How to use your automated decisions and rules.
+3. How to use your automated decisions and rules.
 
 
-##Understanding the deployment process
+## Understanding the deployment process
 
-In previous labs we have defined the Business Object Model and the rules and decisions that operate on the model. If you've completed the labs in the previous steps, you can use your existing project. You can also import the project from this location in your workspace: [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3)
+In previous labs we have defined the Business Object Model and the rules and decisions that operate on the model. If you've completed the labs in the previous steps, you can use your existing project.
 
-You can watch the video, that was provided earlier in the workshop, on how to import a repository into your workspace.
+If you'd prefer to start off fresh you can delete your project & re-import it following these steps:
+
+1. Delete the current project
+
+    1. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
+
+    ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="600px"}
+
+    2. Delete the project by clicking the hamburger menu & selecting _Delete Project_
+
+    ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="600px"}
+
+    3. Type in _ccd-project_ and click `Delete Project`
+    4. If asked you can `Discard unsaved changed and proceed`
+
+2. Import the project
+    1. Click the `Import Project` button
+    2. Enter https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git as the _Repository URL_ and click `Import`
+    3. On the _Import Projects_ screen, select the _ccd-project_ and click `Ok`
+
+    ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="600px"}
 
 We will now deploy the rules on to the Execution Server to process a Credit Card (CC) Dispute.
 
@@ -24,7 +44,7 @@ In previous sections we've learned that Red Hat Process Automation Manager is a 
 
 ![RHPAM 7 Architecture]({% image_path rhpam-7-architecture.png %}){:width="600px"}
 
-1. Go to your project library view and select the automated-chargeback rule. Once the editor opens click on the button Latest Version.
+1. Go to your project library view and select the automated-chargeback rule. Once the editor opens click on the button Latest Version. (**NOTE:** If you re-imported the project then there is probably only 1 version listed)
 
 ![Business Central Chargeback Versions]({% image_path business-central-chargeback-versions.png %}){:width="600px"}
 
@@ -61,6 +81,6 @@ Go to the Main Menu and select Deploy>Execution Services
 
 ![Business Central Execution Services Detail]({% image_path business-central-execution-services-detail.png %}){:width="600px"}
 
-Click on the URL of the container and you will be able to see where your service is running as well as the configuration details.
+Click on the URL of the container and you will be able to see where your service is running as well as the configuration details. You may also be prompted for credentials. Use the same credentials you used to log into the Business Central console.
 
 ![Business Central Execution Services Info]({% image_path business-central-execution-services-info.png %}){:width="600px"}
