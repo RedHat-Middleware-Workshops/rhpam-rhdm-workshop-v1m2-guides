@@ -96,7 +96,7 @@ You will now import the rest of the Business Object Model from a predefined repo
 
 2. Import the finished Domain Model
     1. Click the `Import Project` button
-    2. Enter https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git as the _Repository URL_ and click `Import`
+    2. Enter [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git) as the _Repository URL_ and click `Import`
     3. On the _Import Projects_ screen, select the _ccd-project_ and click `Ok`
 
     ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="600px"}

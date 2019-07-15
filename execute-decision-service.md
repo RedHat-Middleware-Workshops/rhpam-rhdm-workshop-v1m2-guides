@@ -32,7 +32,7 @@ Finally, we provide the body of the request. In the body we pass the data, based
 
 ```
 {  
-   "lookup":null,
+   "lookup":"ccd-ksession-stateless",
    "commands":[  
       {  
          "insert":{  
@@ -81,6 +81,6 @@ If all goes well, the decision service will reply with the following response:
 
 ![Swaggger Response]({% image_path swagger-response.png %}){:width="600px"}
 
-Note that the rules have qualified this data for *automatic processing* and the risk has been set to *2*:
+Note that the rules have qualified this data for *automatic processing* and the risk has been set to *1*:
 
 This concludes the testing of our service. Feel free to test the service with other values for the `CreditCardHolder` and `FraudData`.

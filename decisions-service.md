@@ -31,7 +31,7 @@ If you'd prefer to start off fresh you can delete your project & re-import it fo
 
 2. Import the project
     1. Click the `Import Project` button
-    2. Enter https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git as the _Repository URL_ and click `Import`
+    2. Enter [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git) as the _Repository URL_ and click `Import`
     3. On the _Import Projects_ screen, select the _ccd-project_ and click `Ok`
 
     ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="600px"}
