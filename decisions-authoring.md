@@ -57,7 +57,7 @@ A very common way to define the logic behind risk assessment is to store this in
 
     ![Business Central Decision Table Add Asset Guided]({% image_path business-central-decision-table-add-asset-guided.png %}){:width="600px"}
 
-3. Type the following values on the `Create New Decision Table` wizard
+3. Type the following values on the `Create New Guided Decision Table` wizard
 
     - Guided Decision Table (Name): `risk-evaluation`
     - Package: `com.myspace.ccd_project`
@@ -75,6 +75,7 @@ A very common way to define the logic behind risk assessment is to store this in
     - _Overview_: Contains the meta-information of your asset: Version, Description, Last Modified, etc.
     - _Source_: Is the actual source code that is generated from the Decision Table Model. In the runtime engine, decision tables are translated into native DRL (Drools Rule Language), where each row in the table is translated into a rule.
     - _Data Objects_: Lists the Business Objects available to the editor to be used as conditions and/or actions.
+
 
     In our system, the properties evaluated to determine the risk scoring are:
 
@@ -177,6 +178,8 @@ A very common way to define the logic behind risk assessment is to store this in
 
     ![Business Central Decision Table First Row]({% image_path business-central-decision-table-complete.png %}){:width="600px"}
 
+20. Save the table once you finish.
+
 
 ## Guided Rules
 
@@ -271,9 +274,12 @@ All of the information of the CC dispute is stored in facts. These facts can liv
 
     ![Business Central Guided Rule Modify Fraud Automated True]({% image_path business-central-guided-rule-modify-fraud-automated-true.png %}){:width="600px"}
 
-4. To validate that everything is correct, click on the _Validate_ button on the top navigation bar and you should see a green "Item successfully validated!" message. Next, click on _Save_ to save the rule.
+4. To validate that everything is correct, click on the _Validate_ button on the top navigation bar and you should see a green "Item successfully validated!" message.
 
     ![Business Central Guided Rule Validate]({% image_path business-central-guided-rule-validate.png %}){:width="600px"}
+
+20.  Finally, click on _Save_ to save the rule.
+
 
 You have created your first Business Rule using the Guided editor
 
