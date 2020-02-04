@@ -4,17 +4,17 @@
 In this section you will learn:
 
 1. How to use your Business Object Model to automate decisions and policies.
-
 2. The different types of authoring tools available to you.
-
 3. How to use your automated decisions and rules.
+
+## Intro
 
 Solving a credit card dispute depends on several variables, like:
 
 - The type of customer
 - The amount of the dispute
 
-The knowledge of how to apply these rules and decisions is tacit and lives only in the head of other domain experts like you. In order to automate the process, you will first have to express the business policies that determine how a dispute is handled in the form of rules.
+The knowledge of how to apply these rules and decisions is tacit and lives only in the head of other domain experts. In order to automate the process, you will first have to express the business policies that determine how a dispute is handled in the form of rules.
 
 For this particular case, 2 sets of rules are defined for different stages on the process:
 
@@ -76,13 +76,12 @@ A very common way to define the logic behind risk assessment is to store this in
     - _Source_: Is the actual source code that is generated from the Decision Table Model. In the runtime engine, decision tables are translated into native DRL (Drools Rule Language), where each row in the table is translated into a rule.
     - _Data Objects_: Lists the Business Objects available to the editor to be used as conditions and/or actions.
 
+In our system, the properties evaluated to determine the risk scoring are:
 
-    In our system, the properties evaluated to determine the risk scoring are:
+  - Status of the Credit Card Holder
+  - Total Amount disputed from the Fraud Data
 
-    - Status of the Credit Card Holder
-    - Total Amount disputed from the Fraud Data
-
-    Let's add the Credit Card Holder condition column
+Let's add the Credit Card Holder condition column.
 
 5. Go to the _Columns_ tab and click on the button `Insert Column`, select `Add Condition` and click Next.
 
@@ -125,8 +124,8 @@ A very common way to define the logic behind risk assessment is to store this in
     - Calculation Type: `Literal value`
     - property: `totalFraudAmount`
     - operation:
-        - `greater than` for one column. Use header name: "Minimum Amount"
-        - `less than or equal to` for the second column. Use header nam "Maximum Amount"
+        - `greater than or equal to` for one column. Use header name: "Minimum Amount"
+        - `less than` for the second column. Use header nam "Maximum Amount"
 
     Note that for the second column you don't need to create a new fact pattern, you can reuse the existing one.
 
@@ -152,11 +151,11 @@ A very common way to define the logic behind risk assessment is to store this in
 
     ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-columns-action-data-finish-model.png %}){:width="600px"}
 
-    We are now going to add the actual constraints and actions, i.e. the actual rules. Looking at our requirements, the first constraint is defined as:
+We are now going to add the actual constraints and actions, i.e. the actual rules. Looking at our requirements, the first constraint is defined as:
 
-    _For a standard customer, and a dispute amount between 0 and 100, the risk is low._
+_For a standard customer, and a dispute amount between 0 and 100, the risk is low._
 
-    There are 4 levels of risk: low, medium, high and very-high. We will defined these risk-levels as integers: 1,2,3, and 4.
+There are 4 levels of risk: low, medium, high and very-high. We will defined these risk-levels as integers: 1,2,3, and 4.
 
 19. Click on the button Insert and select append row from the dropdown menu.
 
@@ -174,7 +173,18 @@ A very common way to define the logic behind risk assessment is to store this in
 
     ![Business Central Decision Table First Row]({% image_path business-central-decision-table-first-row.png %}){:width="600px"}
 
-    Apply the same procedure for the rest of the rules. At the end your decision table should look as follows:
+21. Based on the business rules, apply the same procedure for the rest of it.
+  - Standard customer 0-100: low risk (Risk scoring = 0)
+  - Standard customer 100-500: medium risk (Risk scoring = 1)
+  - Standard customer above 500: high risk (Risk scoring = 2)
+  - Silver customer 0-250: low risk (Risk scoring = 0)
+  - Silver customer 250-500: medium risk (Risk scoring = 1)
+  - Silver customer above 500: high risk (Risk scoring = 2)
+  - Gold customer 0-500: low risk (Risk scoring = 0)
+  - Gold customer above 500: medium risk (Risk scoring = 1)
+
+
+  At the end your decision table should look as follows:
 
     ![Business Central Decision Table First Row]({% image_path business-central-decision-table-complete.png %}){:width="600px"}
 
@@ -280,7 +290,6 @@ All of the information of the CC dispute is stored in facts. These facts can liv
 
 20.  Finally, click on _Save_ to save the rule.
 
-
 You have created your first Business Rule using the Guided editor
 
 ## Decision Model & Notation (DMN)
@@ -293,4 +302,4 @@ DMN uses a language business friendly called FEEL or Friendly Enough Expression 
 
 ![Business Central DMN FEEL]({% image_path business-central-dmn-feel.png %}){:width="600px"}
 
-DMN is out of scope for this workshop. However, the specification provides an additional, interesting, and standard way to model and execute decisions in your business applications.
+For now, DMN is out of scope for this workshop. However, it is supported by RHPAM and the specification provides an additional, interesting, and standard way to model and execute decisions in your business applications.

@@ -4,9 +4,7 @@
 In this section you will learn:
 
 1. How to use the rules that you authored in the previous step.
-
 2. How can you expose your decisions as a service.
-
 3. How to use your automated decisions and rules.
 
 
