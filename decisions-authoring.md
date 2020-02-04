@@ -272,29 +272,33 @@ Now we are going to set the property of automated chargeback to true on the `Fra
 
 All of the information of the CC dispute is stored in facts. These facts can live in a session that the engine will keep in memory. So every time you evaluate a new fact, or change something to an existing fact, you will have all of the Objects in the session available in the process of decision making. In the RHS, or action, part of the rule you can change the values of any property on the objects that you can reference via the variables, or even create and add new objects/facts to the session (this is usually referred to as _inferring_ new data or information). Every time a property in an object changes, all of the decisions in which this property is used will be reevaluated to make sure that no other rule needs to be applied.
 
-1. Click on the green plus-sign next to the _THEN_ keyword. When the `Add new action` wizard opens select `Change field values of data` and click on _OK_. This will automatically select the `FraudData` object, as this is the only object we've bound to a variable.
+1. Click on the green plus-sign next to the _THEN_ keyword.
 
-    ![Business Central Guided Rule Modify Fraud Data Wizard]({% image_path business-central-guided-rule-modify-fraud-data-wizard.png %}){:width="600px"}
+  ![Business Central Guided Rule New Then Condition]({% image_path business-central-guided-rule-new-then-condition.png %}){:width="600px"}
 
-2. Now we are going to set the value of the property `automated` to `true`, indicating that an automatic chargeback applies. Click on  the action `Set value of FraudData [data]` and select the field `automated`. Click on the pencil icon to the right and assign a literal value to the property.
+2. When the `Add new action` wizard opens select `Change field values of data` and click on _OK_. This will automatically select the `FraudData` object, as this is the only object we've bound to a variable.
+
+  ![Business Central Guided Rule Modify Fraud Data Wizard]({% image_path business-central-guided-rule-modify-fraud-data-wizard.png %}){:width="600px"}
+
+3. Now we are going to set the value of the property `automated` to `true`, indicating that an automatic chargeback applies. Click on the action `Set value of FraudData [data]` and select the field `automated`. Click on the pencil icon to the right and assign a literal value to the property.
 
     ![Business Central Guided Rule Modify Fraud Automated]({% image_path business-central-guided-rule-modify-fraud-automated.png %}){:width="600px"}
 
-3. select `true` as the value for the automated property (this is the default value for booleans, so the property is probably already set to `true`). Note that since the type of data is `boolean`, you can only choose between `true` and `false`.
+4. Select `true` as the value for the automated property (this is the default value for booleans, so the property is probably already set to `true`). Note that since the type of data is `boolean`, you can only choose between `true` and `false`.
 
     ![Business Central Guided Rule Modify Fraud Automated True]({% image_path business-central-guided-rule-modify-fraud-automated-true.png %}){:width="600px"}
 
-4. To validate that everything is correct, click on the _Validate_ button on the top navigation bar and you should see a green "Item successfully validated!" message.
+5. To validate that everything is correct, click on the _Validate_ button on the top navigation bar and you should see a green "Item successfully validated!" message.
 
     ![Business Central Guided Rule Validate]({% image_path business-central-guided-rule-validate.png %}){:width="600px"}
 
-20.  Finally, click on _Save_ to save the rule.
+6.  Finally, click on _Save_ to save the rule.
 
 You have created your first Business Rule using the Guided editor
-
+// TODO Update to business central DMN editor
 ## Decision Model & Notation (DMN)
 
-Red Hat Process Automation Manager 7 supports the Decision Model & Notation (DMN) v1.2 standard. This means that models created in the DMN v1.1 or v1.2 specification can be imported into, and executed on, RHPAM. Apart from using Red Hat Process Automation Manager's and Red Hat Decision Manager's DMN editor, this also allows users to create DMN models in third-party editors, for example Trisotech's Digital Enterprise Suite, and execute then in RHPAM. In the following image we can see some examples of the types of diagrams you can create to define, in this case, the rules to calculate risk.
+Red Hat Process Automation Manager 7 supports the Decision Model & Notation (DMN) v1.2 standard. This means that models created in the DMN v1.1 or v1.2 specification can be imported into, and executed on, RHPAM. Apart from using Red Hat Process Automation Manager's and Red Hat Decision Manager's DMN editor, this also allows users to create DMN models using Business Central DMN editor, or even third-party editors like for example Trisotech's Digital Enterprise Suite, and execute then in RHPAM. In the following image we can see some examples of the types of diagrams you can create to define, in this case, the rules to calculate risk.
 
 ![Business Central Trisotech DMN]({% image_path business-central-trisotech-dmn.png %}){:width="600px"}
 

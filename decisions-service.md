@@ -3,82 +3,133 @@
 
 In this section you will learn:
 
-1. How to use the rules that you authored in the previous step.
-2. How can you expose your decisions as a service.
+1. How to use the rules that you authored in the previous step;
+2. How can you expose your decisions as a service;
 3. How to use your automated decisions and rules.
-
-
-## Understanding the deployment process
 
 In previous labs we have defined the Business Object Model and the rules and decisions that operate on the model. If you've completed the labs in the previous steps, you can use your existing project.
 
-If you'd prefer to start off fresh you can delete your project & re-import it following these steps:
+NOTE: _If you'd prefer to start off fresh you can delete your `ccd-project` project and re-import it using this URL: [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git)._
 
-1. Delete the current project
+Let's start by having an overview of assts versioning with Business Central.
 
-    1. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
+## Assets Versioning
 
-    ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="600px"}
-
-    2. Delete the project by clicking the hamburger menu & selecting _Delete Project_
-
-    ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="600px"}
-
-    3. Type in _ccd-project_ and click `Delete Project`
-    4. If asked you can `Discard unsaved changed and proceed`
-
-2. Import the project
-    1. Click the `Import Project` button
-    2. Enter [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git) as the _Repository URL_ and click `Import`
-    3. On the _Import Projects_ screen, select the _ccd-project_ and click `Ok`
-
-    ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="600px"}
-
-We will now deploy the rules on to the Execution Server to process a Credit Card (CC) Dispute.
-
-## Background
-
-In previous sections we've learned that Red Hat Process Automation Manager is a modular platform to develop and run decisions and processes. In the diagram below you can see that the component in which you, as a Business Domain Expert, have been authoring your rules is the Business Central Workbench. This is the web-based workbench that provides the tooling for the different types of users. All the assets that you create are stored in a repository (a Git-based version control system) where they are versioned.
+As you can notice on the diagram below, Red Hat Process Automation Manager is a modular platform to develop and run decisions and processes. Until now we have mostly used **Business Central** workbench to develop rules and business models. All the assets that you create or alter using Business Central are versioned in a repository (a Git-based version control system).
 
 ![RHPAM 7 Architecture]({% image_path rhpam-7-architecture.png %}){:width="600px"}
 
-1. Go to your project library view and select the automated-chargeback rule. Once the editor opens click on the button Latest Version. (**NOTE:** If you re-imported the project then there is probably only 1 version listed)
+Business Central automatically versions our code within git-based repository, and it also provides a way for us to check the changes and rollback to previous versions necessary.
 
-![Business Central Chargeback Versions]({% image_path business-central-chargeback-versions.png %}){:width="600px"}
+1. Go to your project library view and select the automated-chargeback rule. Once the editor opens click on the button Latest Version. (**NOTE:** If you re-imported the project then there is probably only 1 version listed).
 
-2- There is also more metadata about your assets stored in the repository, like the name of the user that created the asset, the time and data when it was last modified, etc.
+  ![Business Central Chargeback Versions]({% image_path business-central-chargeback-versions.png %}){:width="600px"}
 
-![Business Central Chargeback Versions Detail]({% image_path business-central-chargeback-versions-detail.png %}){:width="600px"}
+2. There is also more metadata about your assets stored in the repository, like the name of the user that created the asset, the time and data when it was last modified, etc.
 
-3- Click on any of the versions in the dropdown box and you will see the version of the asset tagged.
+  ![Business Central Chargeback Versions Detail]({% image_path business-central-chargeback-versions-detail.png %}){:width="600px"}
 
-![Business Central Chargeback Version]({% image_path business-central-chargeback-version.png %}){:width="600px"}
+3. Click on any of the versions in the dropdown box and you will see the version of the asset tagged.
 
-## Packaging
+  ![Business Central Chargeback Version]({% image_path business-central-chargeback-version.png %}){:width="600px"}
 
-After your project is developed, you can build the project in Business Central and deploy it to the configured Process Server, which is where the rules and processes execute. The Process Server is a component that allows things like distributed execution. If for example, the execution of the case rules will be performed at bank branches, you can deploy as many Process Servers as you need all connected to your Business Central Authoring console.
+## Understanding the deployment process
+
+After your project is developed, you can build the project in Business Central and deploy it to a configured Process Server. The Process Server is the engine that executes rules and processes. It also allows distributed execution so if, for example, the execution of the case rules will be performed at bank branches, you can deploy as many Process Servers as you need all connected to your Business Central Authoring console.
+
+The Process Server supports the capabilities configured in its server configuration. A server configuration is the template that defines the configuration of a group of Execution Servers (a group can contain zero or more execution servers).
+
+There are 2 things that you can configure through the template:
+
+  - Capabilities: What can you execute in your Process Server (Process, Decisions, Planner rules). They are not mutually exclusive. I.e. an execution server can be enabled with zero or more of these capabilities enabled.
+  - Deployment Unit: what package of assets (project, Knowledge JAR) you want to deploy on the server to make available for execution.
 
 
-1. Return to the Home screen of the Business Central workbench (by clicking on the _Home_ icon in the upper left screen). Click on _Deploy_. This will open the _Server Configurations_ perspective. A server configuration is the template, or blueprint, that defines the configuration of a group of Execution Servers (a group can contain zero or more execution servers). There are 2 things that you can configure through the template:
+Let's have a glance of what happens under the covers during a deployment in a managed Process Server:
+1. When you _Build and Deploy_ a project in Business Central, the _Deployment Unit_ (KJAR) is created and pushed to the artifact repository (Maven);
+2. After this, a deployment request is sent to the Execution Server;
+3. The managed Execution Server receives a deployment request for a specific _Deployment Unit_;
+4. The Execution Server fetches the _Deployment Unit_ and tries to initialize it.
 
-    - Capabilities: What can you execute in your Process Server (Process, Decisions, Planner rules). They are not mutually exclusive. I.e. an execution server can be enabled with zero or more of these capabilities enabled.
-    - Deployment Unit: what package of assets (project, Knowledge JAR) you want to deploy on the server to make available for execution.
+Once this tasks are completed, you can start, stop, or remove deployment units using Business Central as needed. You can also create additional _Deployment Units_ from previously built projects and start them on existing or new Process Servers configured in Business Central.
 
-    The services in a project are published by sending a deployment request for a specific _Deployment Unit_ to a configured Execution Server. When you _Build and Deploy_ a project in Business Central, the _Deployment Unit_ (KJAR) is created and pushed to the asset repository (Maven). After this, a deployment request is sent to the Execution Server. The Execution Server will fetch the _Deployment Unit_ . You can start, stop, or remove deployment units in Business Central as needed. You can also create additional _Deployment Units_ from previously built projects and start them on existing or new Process Servers configured in Business Central.
+## Deploying your project
 
-2. Return to the Home screen and select _Design_. Select your Credit Card Dispute project (`ccd-project`). The Library view will open with a list of all your assets. These assets will be compiled and packaged inside a _KJAR_ or _Deployment Unit_. Click on the _Deploy_ button in the top right corner.
+Let's check your Process Server using Business Central.
+
+1. Return to the Home screen of the Business Central workbench (by clicking on the _Home_ icon in the upper left screen).
+
+2. Click on _Deploy_. This will open the _Server Configurations_ perspective. Notice which capabilities you have enabled for your Process Server.
+
+![Business Central Process Server Server Configurations]({% image_path business-central-server-configuration.png %}){:width="600px"}
+
+2. Return to the Home screen and select _Design_. Select `MySpace`, next, select your Credit Card Dispute project (`ccd-project`). The Library view should open with a list of all your assets. These assets will be compiled and packaged inside a _KJAR_, a _Deployment Unit_.
+
+3. Click on the _Deploy_ button in the top right corner.
 
     ![Business Central Deploy]({% image_path business-central-deploy.png %}){:width="600px"}
 
 You will see that the project is first built, meaning the assets are compiled and packaged, and then deployed to a Execution Server container. Go back to the Home screen and elect Deploy. You will now see a container running with your newly created decisions.
 
-
 ## Execution
 
-Go to the Main Menu and select Deploy>Execution Services
+Let's check if the service you deployed is available.
 
-![Business Central Execution Services Detail]({% image_path business-central-execution-services-detail.png %}){:width="600px"}
+1. Go to the Main Menu and select `Deploy`>`Execution Services`.
 
-Click on the URL of the container and you will be able to see where your service is running as well as the configuration details. You may also be prompted for credentials. Use the same credentials you used to log into the Business Central console.
+2. Click on the URL of the container, and a new tab should open:
+
+  ![Business Central Execution Services Detail]({% image_path business-central-execution-services-detail.png %}){:width="600px"}
+
+3. You may also be prompted for credentials. Use the same credentials you used to log into the Business Central console.
+  - user: `pamAdmin`
+  - password: `redhatpam1!`
 
 ![Business Central Execution Services Info]({% image_path business-central-execution-services-info.png %}){:width="600px"}
+
+4. Notice the Process Service responds with details about the `Kie Container` where your `Deployment Unit` is running.
+
+````
+<response type="SUCCESS" msg="Info for container ccd-project_1.0.0-SNAPSHOT">
+  <kie-container container-alias="ccd-project" container-id="ccd-project_1.0.0-SNAPSHOT" status="STARTED">
+    <config-items>
+      <itemName>KBase</itemName>
+      <itemValue/>
+      <itemType>BPM</itemType>
+    </config-items>
+    <config-items>
+      <itemName>KSession</itemName>
+      <itemValue/>
+      <itemType>BPM</itemType>
+    </config-items>
+    <config-items>
+      <itemName>MergeMode</itemName>
+      <itemValue>MERGE_COLLECTIONS</itemValue>
+      <itemType>BPM</itemType>
+    </config-items>
+    <config-items>
+      <itemName>RuntimeStrategy</itemName>
+      <itemValue>SINGLETON</itemValue>
+      <itemType>BPM</itemType>
+    </config-items>
+    <messages>
+      <content>
+        Release id successfully updated for container ccd-project_1.0.0-SNAPSHOT
+      </content>
+      <severity>INFO</severity>
+      <timestamp>2020-02-04T22:00:57.258Z</timestamp>
+    </messages>
+    <release-id>
+      <artifact-id>ccd-project</artifact-id>
+      <group-id>com.myspace</group-id>
+      <version>1.0.0-SNAPSHOT</version>
+    </release-id>
+    <resolved-release-id>
+      <artifact-id>ccd-project</artifact-id>
+      <group-id>com.myspace</group-id>
+      <version>1.0.0-SNAPSHOT</version>
+    </resolved-release-id>
+    <scanner status="DISPOSED"/>
+  </kie-container>
+</response>
+````
