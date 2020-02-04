@@ -133,3 +133,5 @@ Let's check if the service you deployed is available.
   </kie-container>
 </response>
 ````
+
+Congratulations! Now that you have deployed your first business application within the engine, let's learn how about how to automate tests of the rules you created in the Credit Card Dispute project.
