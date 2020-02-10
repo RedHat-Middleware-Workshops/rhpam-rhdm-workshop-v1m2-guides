@@ -11,7 +11,7 @@ In previous labs we have defined the Business Object Model and the rules and dec
 
 NOTE: _If you'd prefer to start off fresh you can delete your `ccd-project` project and re-import it using this URL: [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-3.git)._
 
-Let's start by having an overview of assts versioning with Business Central.
+Let's start by having an overview of assets versioning with Business Central.
 
 ## Assets Versioning
 
