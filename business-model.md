@@ -20,16 +20,16 @@ So based on this development practice, the first and very important task when au
 
 1. To access **Business Central**, go to your OpenShift console tab. Jump to step 2 if you're already logged in. If you're not yet logged in, or have been logged out, log in using these credentials:
 
-- user: `userX`{{copy}}
-- password: `openshift`{{copy}}
+  - user: `userX`{{copy}}
+  - password: `openshift`{{copy}}
 
-![OpenShift Console]({% image_path openshift-console.png %}){:width="600px"}
+  ![OpenShift Console]({% image_path openshift-console.png %}){:width="600px"}
 
 1. Make sure you are on the `Developer` perspective and that you have the `rhpam-userX` project selected. On the left menu, select the `Topology` option.
 
 1. You will see listed the 3 components: `rhpam7-rhpamcentr`, the `rhpam7-kieserver` and `react-web-app`. From this page, you can already find a link to open Business Central. Click on it to open Business Central in another tab.
 
-![PAM Project]({% image_path topology-details.png %}){:width="600px"}
+  ![PAM Project]({% image_path topology-details.png %}){:width="600px"}
 
 1. Login to Business Central with the credentials u:`pamAdmin`, p:`redhatpam1!`
 
@@ -37,9 +37,7 @@ So based on this development practice, the first and very important task when au
 
 1. Select _Design_ from the main menu. You will be redirected to your working space. You will see a list of _Spaces_, with a single space named _MySpace_.
 
-1. Click on _MySpace_.
-
-  _This is the sandbox in which you'll define your projects, and within those projects, your projects assets._
+1. Click on _MySpace_. This is the sandbox in which you'll define your projects, and within those projects, your projects assets.
 
 1. Click on the _Add Project_ button to create a new project in your space. When the _Add Project_ wizard opens up, type in
 
@@ -48,19 +46,18 @@ So based on this development practice, the first and very important task when au
 
   This project is your business boundary that encapsulates your business capability. Once the creation of your project is complete, you will see it in your space:
 
-    ![Business Central Asset Empty Project]({% image_path business-central-asset-ccd-project.png %}){:width="600px"}
+    ![Business Central Asset CCD Project]({% image_path business-central-asset-ccd-project.png %}){:width="600px"}
 
 1. Select the `ccd-project`. You should see the following page with the project content, which, at the moment, is empty.
 
     ![Business Central Asset Empty Project]({% image_path business-central-asset-empty-project.png %}){:width="600px"}
 
-1. Notice there's a blue button called `Add Asset`.  Click on the `Add Asset` button and you will be presented with a catalog of the wizards to create assets.
-
-  _An asset is a business resource of the project like Rules, Processes, Decision Tables, Data Objects, Data Forms, etc._
+1. Notice there's a blue button called `Add Asset`.  Click on the `Add Asset` button and you will be presented with a catalog of the wizards to create assets.An asset is a business resource of the project like Rules, Processes, Decision Tables, Data Objects, Data Forms, etc._
 
     ![Business Central Asset Catalog]({% image_path business-central-asset-catalog.png %}){:width="600px"}
 
 1. Select the wizard for _Data Object_ from the catalog to create your business object model for the _Credit Card Holder_ enter the following and Click OK:
+
   * type `CreditCardHolder`{{copy}} as the name of the object sandbox
   * select `com.myspace.ccd_project` as the Package.
 
@@ -91,23 +88,24 @@ In order to do this, let's delete the `ccd-project` project and learn how to imp
 
     1. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
 
-    ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="600px"}
+      ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="600px"}
 
     2. Delete the project by clicking the hamburger menu & selecting _Delete Project_
 
-    ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="600px"}
+      ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="600px"}
 
     3. Type in _ccd-project_ and click `Delete Project`
-    4. If asked you can `Discard unsaved changed and proceed`
+    4. If asked you can `Discard unsaved changed and proceed`.
 
 ## Importing a project from external git repository
 
 Let's import the project with all the Data Objects relative to the Domain Model:
+
     1. Click the `Import Project` button;
     2. On the pop-up, enter [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git) as the _Repository URL_ and click `Import`
     3. On the _Import Projects_ screen, select the _ccd-project_ and click `Ok`
 
-    ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="600px"}
+      ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="600px"}
 
 3. Examine the other newly-imported entities
 

@@ -46,6 +46,7 @@ There are 2 things that you can configure through the template:
 
 
 Let's have a glance of what happens under the covers during a deployment in a managed Process Server:
+
 1. When you _Build and Deploy_ a project in Business Central, the _Deployment Unit_ (KJAR) is created and pushed to the artifact repository (Maven);
 2. After this, a deployment request is sent to the Execution Server;
 3. The managed Execution Server receives a deployment request for a specific _Deployment Unit_;
@@ -89,49 +90,49 @@ Let's check if the service you deployed is available.
 
 4. Notice the Process Service responds with details about the `Kie Container` where your `Deployment Unit` is running.
 
-````
-<response type="SUCCESS" msg="Info for container ccd-project_1.0.0-SNAPSHOT">
-  <kie-container container-alias="ccd-project" container-id="ccd-project_1.0.0-SNAPSHOT" status="STARTED">
-    <config-items>
-      <itemName>KBase</itemName>
-      <itemValue/>
-      <itemType>BPM</itemType>
-    </config-items>
-    <config-items>
-      <itemName>KSession</itemName>
-      <itemValue/>
-      <itemType>BPM</itemType>
-    </config-items>
-    <config-items>
-      <itemName>MergeMode</itemName>
-      <itemValue>MERGE_COLLECTIONS</itemValue>
-      <itemType>BPM</itemType>
-    </config-items>
-    <config-items>
-      <itemName>RuntimeStrategy</itemName>
-      <itemValue>SINGLETON</itemValue>
-      <itemType>BPM</itemType>
-    </config-items>
-    <messages>
-      <content>
-        Release id successfully updated for container ccd-project_1.0.0-SNAPSHOT
-      </content>
-      <severity>INFO</severity>
-      <timestamp>2020-02-04T22:00:57.258Z</timestamp>
-    </messages>
-    <release-id>
-      <artifact-id>ccd-project</artifact-id>
-      <group-id>com.myspace</group-id>
-      <version>1.0.0-SNAPSHOT</version>
-    </release-id>
-    <resolved-release-id>
-      <artifact-id>ccd-project</artifact-id>
-      <group-id>com.myspace</group-id>
-      <version>1.0.0-SNAPSHOT</version>
-    </resolved-release-id>
-    <scanner status="DISPOSED"/>
-  </kie-container>
-</response>
-````
+  ```
+  <response type="SUCCESS" msg="Info for container ccd-project_1.0.0-SNAPSHOT">
+    <kie-container container-alias="ccd-project" container-id="ccd-project_1.0.0-SNAPSHOT" status="STARTED">
+      <config-items>
+        <itemName>KBase</itemName>
+        <itemValue/>
+        <itemType>BPM</itemType>
+      </config-items>
+      <config-items>
+        <itemName>KSession</itemName>
+        <itemValue/>
+        <itemType>BPM</itemType>
+      </config-items>
+      <config-items>
+        <itemName>MergeMode</itemName>
+        <itemValue>MERGE_COLLECTIONS</itemValue>
+        <itemType>BPM</itemType>
+      </config-items>
+      <config-items>
+        <itemName>RuntimeStrategy</itemName>
+        <itemValue>SINGLETON</itemValue>
+        <itemType>BPM</itemType>
+      </config-items>
+      <messages>
+        <content>
+          Release id successfully updated for container ccd-project_1.0.0-SNAPSHOT
+        </content>
+        <severity>INFO</severity>
+        <timestamp>2020-02-04T22:00:57.258Z</timestamp>
+      </messages>
+      <release-id>
+        <artifact-id>ccd-project</artifact-id>
+        <group-id>com.myspace</group-id>
+        <version>1.0.0-SNAPSHOT</version>
+      </release-id>
+      <resolved-release-id>
+        <artifact-id>ccd-project</artifact-id>
+        <group-id>com.myspace</group-id>
+        <version>1.0.0-SNAPSHOT</version>
+      </resolved-release-id>
+      <scanner status="DISPOSED"/>
+    </kie-container>
+  </response>
+  ```
 
 Congratulations! Now that you have deployed your first business application within the engine, let's learn how about how to automate tests of the rules you created in the Credit Card Dispute project.

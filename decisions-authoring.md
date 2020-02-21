@@ -101,23 +101,21 @@ Let's add the Credit Card Holder condition column.
 
     ![Business Central Create Pattern Field Operator]({% image_path business-central-create-pattern-field-operator.png %}){:width="600px"}
 
-10. Since there are only 3 possible status, we are going to configure the _Value list_ with the following values:
+10. Since there are only 3 possible status, we are going to configure the fields with the values below and then click _Next_.
 
-    `Standard,Silver,Gold`
-
-    Set the _Default value_ to `Standard` and then click _Next_.
+    - the _Value list_ with the following values: `Standard,Silver,Gold`
+    - The _Default value_ to `Standard`
 
     ![Business Central Create Pattern Field Values]({% image_path business-central-create-pattern-field-values.png %}){:width="600px"}
 
-11. We can now configure the header of the column
-
-    Header: `Status`
-
-    Click Finish and go back to the `Model` tab in the editor. You should see the newly created column.
+11. We can now configure the header of the column `Header`: `Status`.
 
     ![Business Central Create Pattern Field Header]({% image_path business-central-create-pattern-field-header.png %}){:width="600px"}
 
-12. Repeat the same steps to add 2 more columns:
+12. Click Finish and go back to the `Model` tab in the editor. You should see the newly created column.
+
+13. Repeat the same steps to add 2 more columns:
+
     - Pattern:
         - Fact type: `FraudData`
         - Binding: `data`
@@ -147,15 +145,11 @@ Let's add the Credit Card Holder condition column.
 
 17. Click on the _Save_ button to save the decision table.
 
-18. Go back to your `Model` tab, which should show the following decision table.
+18. Go back to your `Model` tab. We are now going to add the actual constraints and actions, i.e. the actual rules. Looking at our requirements, the first constraint is defined as:
 
-    ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-columns-action-data-finish-model.png %}){:width="600px"}
+  _For a standard customer, and a dispute amount between 0 and 100, the risk is low._
 
-We are now going to add the actual constraints and actions, i.e. the actual rules. Looking at our requirements, the first constraint is defined as:
-
-_For a standard customer, and a dispute amount between 0 and 100, the risk is low._
-
-There are 4 levels of risk: low, medium, high and very-high. We will defined these risk-levels as integers: 1,2,3, and 4.
+  There are 4 levels of risk: low, medium, high and very-high. We will defined these risk-levels as integers: 1,2,3, and 4.
 
 19. Click on the button Insert and select append row from the dropdown menu.
 
@@ -174,6 +168,7 @@ There are 4 levels of risk: low, medium, high and very-high. We will defined the
     ![Business Central Decision Table First Row]({% image_path business-central-decision-table-first-row.png %}){:width="600px"}
 
 21. Based on the business rules, apply the same procedure for the rest of it.
+
   - Standard customer 0-100: low risk (Risk scoring = 0)
   - Standard customer 100-500: medium risk (Risk scoring = 1)
   - Standard customer above 500: high risk (Risk scoring = 2)
@@ -205,7 +200,7 @@ First we need to tell the rule what object or collection of objects is going to 
 - the _Then_ part defines the actions the rule will execute when it fires. This can be for example setting specific data on a fact (in the Business Object Model), but this can also be inserting new, inferred, data into the rules engine. For example, based on a card holder's age, we can infer that he/she is an adult.
 - the _properties_ or _attributes_ part. Here we can set additional characteristics of the rule, for example the group of rules it belongs to.
 
-To create the rule, you:
+To create the rule:
 
 1. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
 
@@ -268,9 +263,9 @@ To create the rule, you:
 
     ![Business Central Guided Rule Modify Fraud Data]({% image_path business-central-guided-rule-modify-fraud-data.png %}){:width="600px"}
 
-Now we are going to set the property of automated chargeback to true on the `FraudData` object, so the dispute can be processed accordingly. Since this is the decision we are making, and thus the _action_ of the rule, we will define this as the THEN clause,  also known as the Right Hand Side (RHS) or Action section of our rule.
+  Now we are going to set the property of automated chargeback to true on the `FraudData` object, so the dispute can be processed accordingly. Since this is the decision we are making, and thus the _action_ of the rule, we will define this as the THEN clause,  also known as the Right Hand Side (RHS) or Action section of our rule.
 
-All of the information of the CC dispute is stored in facts. These facts can live in a session that the engine will keep in memory. So every time you evaluate a new fact, or change something to an existing fact, you will have all of the Objects in the session available in the process of decision making. In the RHS, or action, part of the rule you can change the values of any property on the objects that you can reference via the variables, or even create and add new objects/facts to the session (this is usually referred to as _inferring_ new data or information). Every time a property in an object changes, all of the decisions in which this property is used will be reevaluated to make sure that no other rule needs to be applied.
+  All of the information of the CC dispute is stored in facts. These facts can live in a session that the engine will keep in memory. So every time you evaluate a new fact, or change something to an existing fact, you will have all of the Objects in the session available in the process of decision making. In the RHS, or action, part of the rule you can change the values of any property on the objects that you can reference via the variables, or even create and add new objects/facts to the session (this is usually referred to as _inferring_ new data or information). Every time a property in an object changes, all of the decisions in which this property is used will be reevaluated to make sure that no other rule needs to be applied.
 
 1. Click on the green plus-sign next to the _THEN_ keyword.
 
@@ -295,7 +290,8 @@ All of the information of the CC dispute is stored in facts. These facts can liv
 6.  Finally, click on _Save_ to save the rule.
 
 You have created your first Business Rule using the Guided editor
-// TODO Update to business central DMN editor
+<!-- // TODO Update to business central DMN editor -->
+
 ## Decision Model & Notation (DMN)
 
 Red Hat Process Automation Manager 7 supports the Decision Model & Notation (DMN) v1.2 standard. This means that models created in the DMN v1.1 or v1.2 specification can be imported into, and executed on, RHPAM. Apart from using Red Hat Process Automation Manager's and Red Hat Decision Manager's DMN editor, this also allows users to create DMN models using Business Central DMN editor, or even third-party editors like for example Trisotech's Digital Enterprise Suite, and execute then in RHPAM. In the following image we can see some examples of the types of diagrams you can create to define, in this case, the rules to calculate risk.
