@@ -1,12 +1,14 @@
-# The Business Background
+# Introduction
 
-**What you will learn:**
+In this scenario you will be introduced to decisions and rules, why these concepts and methodologies are important, and what the industry standards are in this area.
 
-In this scenario you will be introduced to policies, decisions and rules, why these concepts and methodologies are important, and what the industry standards are in this area.
+**Topics covered in this module:**
 
-In the labs, you will define the policies to solve a credit card dispute using different approaches like Decision tables and Spreadsheets, DMN, and technical rules. Once deployed you will expose these rules and decisions as a service, accessible through API’s,
-
-**Topics covered:** Rules, DRL, DMN, Decision Tables, OMG standards,  deploying your first assets, KJARs, and the REST API for rules and decisions.
-
+- Importing projects in business central;
+- Business Object Models;
+- Rules: DRL Language, DMN Notation, Decision Tables;
+- Testing rules;
+- Deploying your first project;
+- Exposing and consuming rules via REST API;
 
 More information can be found at in our [documentation](http://docs.redhat.com).
