@@ -39,10 +39,14 @@ So based on this development practice, the first and very important task when au
 
 1. Click on _MySpace_. This is the sandbox in which you'll define your projects, and within those projects, your projects assets.
 
-1. Click on the _Add Project_ button to create a new project in your space. When the _Add Project_ wizard opens up, type in
+1. Since this project is going to be used to deliver a case management implementation, we need to add a new `Case Project`. In order to do so, click on the arrow right next to the _Add Project_ button and select the option `Case Project`.
 
-  *  `ccd-project` as the name of the project, and
-  * `Assets to Automate credit card dispute process` as the description of your project.
+  ![Business Central Asset CCD Project]({% image_path add-new-case-project.png %}){:width="600px"}
+
+1. When the _Add Project_ wizard opens up, type in
+
+    *  `ccd-project` as the name of the project, and
+    * `Assets to Automate credit card dispute process` as the description of your project.
 
   This project is your business boundary that encapsulates your business capability. Once the creation of your project is complete, you will see it in your space:
 
