@@ -33,7 +33,7 @@ So based on this development practice, the first and very important task when au
 
 1. Login to Business Central with the credentials u:`pamAdmin`, p:`redhatpam1!`
 
-    ![Business Central Console]({% image_path business-central-console.png %}){:width="600px"}
+  ![Business Central Console]({% image_path business-central-console.png %}){:width="600px"}
 
 1. Select _Design_ from the main menu. You will be redirected to your working space. You will see a list of _Spaces_, with a single space named _MySpace_.
 
