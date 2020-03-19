@@ -181,7 +181,7 @@ Let's add the Credit Card Holder condition column.
 
   At the end your decision table should look as follows:
 
-    ![Business Central Decision Table First Row]({% image_path business-central-decision-table-complete.png %}){:width="600px"}
+  ![Business Central Decision Complete]({% image_path business-central-decision-table-complete.png %}){:width="600px"}
 
 20. Save the table once you finish.
 
