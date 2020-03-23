@@ -87,17 +87,17 @@ We learned how easy it is to create a new project and new data objects. Let's no
 
 In order to do this, let's delete the `ccd-project` project and learn how to import an existing project in a git repository.
 
-### Deleting the `ccd-project` project
+### Deleting the ccd-project project
 
   1. Delete the current project
 
   2. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
 
-    ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="600px"}
+  ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="600px"}
 
   2. Delete the project by clicking the hamburger menu & selecting _Delete Project_
 
-    ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="600px"}
+  ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="600px"}
 
   3. Type in _ccd-project_ and click `Delete Project`
   4. If asked you can `Discard unsaved changes and proceed`.
@@ -112,7 +112,7 @@ Let's import the project with all the Data Objects relative to the Domain Model:
 
   3. On the _Import Projects_ screen, select the _ccd-project_ and click `Ok`
 
-    ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="600px"}
+  ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="600px"}
 
   4. Examine the other newly-imported entities
 
