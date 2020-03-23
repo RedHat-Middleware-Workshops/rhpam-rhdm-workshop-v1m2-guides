@@ -50,7 +50,7 @@ So based on this development practice, the first and very important task when au
 
   This project is your business boundary that encapsulates your business capability. Once the creation of your project is complete, you will see it in your space:
 
-    ![Business Central Asset CCD Project]({% image_path business-central-asset-ccd-project.png %}){:width="600px"}
+  ![Business Central Asset CCD Project]({% image_path business-central-asset-ccd-project.png %}){:width="600px"}
 
 1. Select the `ccd-project`. You should see the following page with the project content, which, at the moment, does not have any business asset.
 
