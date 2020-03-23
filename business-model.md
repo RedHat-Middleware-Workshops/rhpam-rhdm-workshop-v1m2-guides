@@ -52,7 +52,7 @@ So based on this development practice, the first and very important task when au
 
     ![Business Central Asset CCD Project]({% image_path business-central-asset-ccd-project.png %}){:width="600px"}
 
-1. Select the `ccd-project`. You should see the following page with the project content, which, at the moment, is empty.
+1. Select the `ccd-project`. You should see the following page with the project content, which, at the moment, does not have any business asset.
 
     ![Business Central Asset Empty Project]({% image_path business-central-asset-empty-project.png %}){:width="600px"}
 
