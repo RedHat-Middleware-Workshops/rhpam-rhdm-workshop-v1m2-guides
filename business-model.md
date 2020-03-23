@@ -88,29 +88,32 @@ We learned how easy it is to create a new project and new data objects. Let's no
 In order to do this, let's delete the `ccd-project` project and learn how to import an existing project in a git repository.
 
 ### Deleting the `ccd-project` project
-1. Delete the current project
 
-    1. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
+  1. Delete the current project
 
-      ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="600px"}
+  2. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
 
-    2. Delete the project by clicking the hamburger menu & selecting _Delete Project_
+    ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="600px"}
 
-      ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="600px"}
+  2. Delete the project by clicking the hamburger menu & selecting _Delete Project_
 
-    3. Type in _ccd-project_ and click `Delete Project`
-    4. If asked you can `Discard unsaved changed and proceed`.
+    ![Business Central Delete CCD Project]({% image_path business-central-delete-ccd-project.png %}){:width="600px"}
+
+  3. Type in _ccd-project_ and click `Delete Project`
+  4. If asked you can `Discard unsaved changes and proceed`.
 
 ## Importing a project from external git repository
 
 Let's import the project with all the Data Objects relative to the Domain Model:
 
-    1. Click the `Import Project` button;
-    2. On the pop-up, enter [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git) as the _Repository URL_ and click `Import`
-    3. On the _Import Projects_ screen, select the _ccd-project_ and click `Ok`
+  1. Click the `Import Project` button;
 
-      ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="600px"}
+  2. On the pop-up, enter [https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git](https://github.com/RedHat-Middleware-Workshops/rhpam-rhdm-workshop-v1m2-labs-step-2.git) as the _Repository URL_ and click `Import`
 
-3. Examine the other newly-imported entities
+  3. On the _Import Projects_ screen, select the _ccd-project_ and click `Ok`
+
+    ![Business Central Delete CCD Project]({% image_path business-central-import-ccd-project.png %}){:width="600px"}
+
+  4. Examine the other newly-imported entities
 
 Congratulations, now you that we've seen how to define Data Objects, we can now start working with the automation of our business rules and decisions!
