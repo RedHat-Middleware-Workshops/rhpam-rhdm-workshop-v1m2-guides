@@ -52,7 +52,7 @@ Red Hat Process Automation Manager contains a sophisticated _Test Scenario_ feat
 
     ![Test Scenario First Test]({% image_path test-scenario-first-test.png %}){:width="600px"}
 
-10. Run the test by clicking on the _Play_ button in the top menu (next to the _Copy_ button). If everything is correct, the test will run and the result will be shown.
+10. Run the test by clicking on the _Play_ button in the top menu (next to the _Validate_ button). If everything is correct, the test will run and the result will be shown.
 
 11. Add some additional tests to complete your scenario tesing, for example:
     - Given:
