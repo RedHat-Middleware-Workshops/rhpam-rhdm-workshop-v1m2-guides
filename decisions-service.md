@@ -70,7 +70,7 @@ Let's check your Process Server using Business Central.
 
     ![Business Central Deploy]({% image_path business-central-deploy.png %}){:width="600px"}
 
-You will see that the project is first built, meaning the assets are compiled and packaged, and then deployed to a Execution Server container. Go back to the Home screen and elect Deploy. You will now see a container running with your newly created decisions.
+You will see that the project is first built, meaning the assets are compiled and packaged, and then deployed to a Execution Server container. Go back to the Home screen and select Deploy. You will now see a container running with your newly created decisions.
 
 ## Execution
 
