@@ -1,5 +1,5 @@
 
-# Authoring Decisions and Rules
+# 4. Authoring Decisions and Rules
 
 In this section you will learn:
 

@@ -1,4 +1,4 @@
-# Testing your Decision Service
+# 6. Testing your Decision Service
 
 Now that you've created your Decision Service, and have deployed it on the Red Hat Process Automation Manager execution server, let's learn how we can test it.
 
@@ -84,7 +84,7 @@ In order to do that, let's use a simple web-application that we've provided for 
   - **Status:** Gold
   - **Description:** Delta Airlines
   - **Amount:** 1000
-  
+
 
 3. Next, click on the _Submit_ button. The application will send a RESTful request to the Decision Server. If everything is working correctly, the Decision Server will send a result that will be displayed in the application:
 

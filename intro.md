@@ -1,4 +1,4 @@
-# Introduction
+# 1. Introduction
 
 In this scenario you will be introduced to decisions and rules, why these concepts and methodologies are important, and what the industry standards are in this area.
 

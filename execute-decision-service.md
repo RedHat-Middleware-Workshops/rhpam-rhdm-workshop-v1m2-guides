@@ -1,4 +1,4 @@
-# Invoking your Decision Service
+# 7. Invoking your Decision Service
 
 In the previous step we've interacted with the Decision Service via a web-application. In this step we'll have a closer look at the RESTful API used in the communication between the web-application and the Decision Service. We will be using the Swagger API documentation for this.
 
