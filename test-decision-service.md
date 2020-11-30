@@ -21,7 +21,7 @@ Red Hat Process Automation Manager contains a sophisticated _Test Scenario_ feat
 
 2. Select the `Test Scenario` tile. Give the scenario the name `risk-evaluation-tests` and set the package to `com.myspace.ccd_project`. Set the _Source Type_ to `Rule`.
 
-    ![Test Scenario Create]({% image_path test-scenario-create.png %}){:width="600px"}
+    ![Test Scenario Create]({% image_path test-scenario-create.png %}){:width="800px"}
 
 3. The scenario testing tool uses the concept in which _Given_ a specific set of input data, we _Expect_ a certain result. To implement our test scenario we therefore have to specify the input data of our rules (_Given_) and the results we expect our rules to produce for the given input data.
 
@@ -29,19 +29,19 @@ Red Hat Process Automation Manager contains a sophisticated _Test Scenario_ feat
 
 5. Go back to the _Model_ tab. To test our rules, we need to provide the input data and the expected output. Our decision table operates on 2 datatypes, `CreditCardHolder` and `FraudData`. So let's start by creating a column for our `CreditCardHolder` in the _Given_ part of the scenario testing table. Click on the _INSTANCE 1_ cell in the table. On the right-hand-side of the editor, in the _Test Tools_ panel, expand the _Data Object_ `CreditCardHolder`, select the `status` field and click on the _Add_ button.
 
-    ![Test Scenario Add Given CCH Status]({% image_path test-scenario-add-given-cch-status.png %}){:width="600px"}
+    ![Test Scenario Add Given CCH Status]({% image_path test-scenario-add-given-cch-status.png %}){:width="800px"}
 
     The column in the _Given_ section will be configured to represent that `status` field of the `CreditCardHolder` object.
 
 6. To add an additional column in the _Given_ section of the table, right-click on the _Given_ column and select `Insert column right`.
 
-    ![Test Scenario Given Insert Column Right]({% image_path test-scenario-given-insert-column-right.png %}){:width="600px"}
+    ![Test Scenario Given Insert Column Right]({% image_path test-scenario-given-insert-column-right.png %}){:width="800px"}
 
 7. Click on either the cell with the word `INSTANCE` or `PROPERTY`, and in the _Test Tools_ panel, expand _Data Object_ `FraudData`, and select the field `totalFraudAmount`. Click on the _Add_ button.
 
 8. Now that we have configured the 2 columns that define our input data, we can now configure the column in which we can set our expected result. Click on either the `INSTANCE` or `PROPERTY` cell in the `EXPECT` cell. In the _Test Tools_ panel on the right, expand the `FraudData` object, select the `disputeRiskRating` field, and click _Add_.
 
-    ![Test Scenario Table Configured]({% image_path test-scenario-table-configured.png %}){:width="600px"}
+    ![Test Scenario Table Configured]({% image_path test-scenario-table-configured.png %}){:width="800px"}
 
 9. With the table configured, we can now start adding our test-cases. Add a row with the following values:
     - Given:
@@ -50,7 +50,7 @@ Red Hat Process Automation Manager contains a sophisticated _Test Scenario_ feat
     - Expect:
         - FraudData.disputeRiskRating: `0`
 
-    ![Test Scenario First Test]({% image_path test-scenario-first-test.png %}){:width="600px"}
+    ![Test Scenario First Test]({% image_path test-scenario-first-test.png %}){:width="800px"}
 
 10. Run the test by clicking on the _Play_ button in the top menu (next to the _Validate_ button). If everything is correct, the test will run and the result will be shown.
 
@@ -61,7 +61,7 @@ Red Hat Process Automation Manager contains a sophisticated _Test Scenario_ feat
     - Expect:
         - FraudData.disputeRiskRating: `1`
 
-    ![Test Scenario Two Test]({% image_path test-scenario-two-tests.png %}){:width="600px"}
+    ![Test Scenario Two Test]({% image_path test-scenario-two-tests.png %}){:width="800px"}
 
 Feel free to try incorrect values to the expected column to check the behavior of the tooling.
 
@@ -71,11 +71,11 @@ In the previous exercise, we used the _Test Scenario_ tooling to test the rules 
 
 In order to do that, let's use a simple web-application that we've provided for you. The application allows you to enter the data of the credit-card holder, and the data of the line item. The data is submitted to the Decision Server, which will calculate the risk of the transaction and determine whether the data can be automatically processed.
 
-![ReactJS App]({% image_path reactjs-app.png %}){:width="600px"}
+![ReactJS App]({% image_path reactjs-app.png %}){:width="800px"}
 
 1. To access the application, go back to your OpenShift environment, and click on the `react-web-app` route to open it in a new tab:
 
-![ReactJS App Route]({% image_path openshift-react-app-route.png %}){:width="600px"}
+![ReactJS App Route]({% image_path openshift-react-app-route.png %}){:width="800px"}
 
 2. Once you've opened the react web app, enter the following details:
 
@@ -88,7 +88,7 @@ In order to do that, let's use a simple web-application that we've provided for 
 
 3. Next, click on the _Submit_ button. The application will send a RESTful request to the Decision Server. If everything is working correctly, the Decision Server will send a result that will be displayed in the application:
 
-![ReactJS App Request Response]({% image_path reactjs-app-request-response.png %}){:width="600px"}
+![ReactJS App Request Response]({% image_path reactjs-app-request-response.png %}){:width="800px"}
 
 We can see that the `riskRating` has been set to **1** and the transaction is eligible for automated processing. Feel free to test your Decision Service with different values to see if all the use-cases you've implemented in your rules are covered.
 

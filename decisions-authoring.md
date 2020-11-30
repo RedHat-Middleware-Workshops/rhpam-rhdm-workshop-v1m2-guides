@@ -51,11 +51,11 @@ A very common way to define the logic behind risk assessment is to store this in
 
 1. First, go back to the Library view and click on the blue `Add Asset` button in the top right corner.
 
-    ![Business Central Decision Table Add Asset]({% image_path business-central-decision-table-add-asset.png %}){:width="600px"}
+    ![Business Central Decision Table Add Asset]({% image_path business-central-decision-table-add-asset.png %}){:width="800px"}
 
 2. Select `Guided Decision Table` from the catalog of assets (the UI allows you to filter the assets per type by using the filter drop-down and input box in the upper-left of the screen. Select `Decisions` to filter on decision assets).
 
-    ![Business Central Decision Table Add Asset Guided]({% image_path business-central-decision-table-add-asset-guided.png %}){:width="600px"}
+    ![Business Central Decision Table Add Asset Guided]({% image_path business-central-decision-table-add-asset-guided.png %}){:width="800px"}
 
 3. Type the following values on the `Create New Guided Decision Table` wizard
 
@@ -66,7 +66,7 @@ A very common way to define the logic behind risk assessment is to store this in
 
 4. You should see the `Guided Decision Table` editor with an empty table.
 
-    ![Business Central Decision Table New]({% image_path business-central-decision-table-new.png %}){:width="600px"}
+    ![Business Central Decision Table New]({% image_path business-central-decision-table-new.png %}){:width="800px"}
 
     There are 5 tabs in the editor:
 
@@ -85,32 +85,32 @@ Let's add the Credit Card Holder condition column.
 
 5. Go to the _Columns_ tab and click on the button `Insert Column`, select `Add Condition` and click Next.
 
-    ![Business Central Add Condition]({% image_path business-central-add-condition.png %}){:width="600px"}
+    ![Business Central Add Condition]({% image_path business-central-add-condition.png %}){:width="800px"}
 
 6. You need to define which object is going to be evaluated. Click on `Create new Fact Pattern`. Select `CreditCardHolder` as the _Fact type_ and define a variable called `holder` as the _Binding_. Click _Ok_ to dismiss the fact pattern dialog, then click _Next_.
 
-    ![Business Central Create Pattern]({% image_path business-central-create-pattern.png %}){:width="600px"}
+    ![Business Central Create Pattern]({% image_path business-central-create-pattern.png %}){:width="800px"}
 
 7. The calculation type is the type of evaluation that you are going to apply. In this case it will be against literal values. Select `Literal value` and click _Next_.
 
 8. You need to define a constraint on the card holder's status, so select the `status` field and click _Next_.
 
-    ![Business Central Create Pattern Field]({% image_path business-central-create-pattern-field.png %}){:width="600px"}
+    ![Business Central Create Pattern Field]({% image_path business-central-create-pattern-field.png %}){:width="800px"}
 
 9. Next, select the operator for the constraint. Select `equal to` from the drop down menu and click _Next_.
 
-    ![Business Central Create Pattern Field Operator]({% image_path business-central-create-pattern-field-operator.png %}){:width="600px"}
+    ![Business Central Create Pattern Field Operator]({% image_path business-central-create-pattern-field-operator.png %}){:width="800px"}
 
 10. Since there are only 3 possible statuses, you are going to configure the fields with the values below and then click _Next_.
 
     - the _Value list_ with the following values: `Standard,Silver,Gold`
     - The _Default value_ to `Standard`
 
-    ![Business Central Create Pattern Field Values]({% image_path business-central-create-pattern-field-values.png %}){:width="600px"}
+    ![Business Central Create Pattern Field Values]({% image_path business-central-create-pattern-field-values.png %}){:width="800px"}
 
 11. You can now configure the header of the column `Header`: `Status`.
 
-    ![Business Central Create Pattern Field Header]({% image_path business-central-create-pattern-field-header.png %}){:width="600px"}
+    ![Business Central Create Pattern Field Header]({% image_path business-central-create-pattern-field-header.png %}){:width="800px"}
 
 12. Click Finish and go back to the `Model` tab in the editor. You should see the newly created column.
 
@@ -129,7 +129,7 @@ Let's add the Credit Card Holder condition column.
 
     At the end your decision table should look like this:
 
-    ![Business Central Decision Table Columns]({% image_path business-central-decision-table-columns.png %}){:width="600px"}
+    ![Business Central Decision Table Columns]({% image_path business-central-decision-table-columns.png %}){:width="800px"}
 
 13. Click on the _Save_ button to save the decision table.
 
@@ -137,11 +137,11 @@ Let's add the Credit Card Holder condition column.
 
 15. Set the risk scoring property of the `FraudData` object. So in the dropdown menu select the object `FraudData` bound to the variable `data`.Click Next.
 
-    ![Business Central Decision Table Columns Action Data]({% image_path business-central-decision-table-columns-action-data.png %}){:width="600px"}
+    ![Business Central Decision Table Columns Action Data]({% image_path business-central-decision-table-columns-action-data.png %}){:width="800px"}
 
 16. Select the field `disputeRiskRating` and click Next. You don't have a list of values so click Next. Type `Risk Scoring` as the header for the column and click Finish.
 
-    ![Business Central Decision Table Columns Action Data Finish]({% image_path business-central-decision-table-columns-action-data-finish.png %}){:width="600px"}
+    ![Business Central Decision Table Columns Action Data Finish]({% image_path business-central-decision-table-columns-action-data-finish.png %}){:width="800px"}
 
 17. Click on the _Save_ button to save the decision table.
 
@@ -153,7 +153,7 @@ Let's add the Credit Card Holder condition column.
 
 19. Click on the button Insert and select append row from the dropdown menu.
 
-     ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-append-row.png %}){:width="600px"}
+     ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-append-row.png %}){:width="800px"}
 
 20. Click on the _Description_ cell of the new row and type "_Standard customer low risk_". Use the following values for the other columns:
 
@@ -165,7 +165,7 @@ Let's add the Credit Card Holder condition column.
 
     Your decision table should look like this. Click Save.
 
-    ![Business Central Decision Table First Row]({% image_path business-central-decision-table-first-row.png %}){:width="600px"}
+    ![Business Central Decision Table First Row]({% image_path business-central-decision-table-first-row.png %}){:width="800px"}
 
 21. Based on the business rules, apply the same procedure for the rest of it.
 
@@ -181,7 +181,7 @@ Let's add the Credit Card Holder condition column.
 
   At the end your decision table should look as follows:
 
-  ![Business Central Decision Complete]({% image_path business-central-decision-table-complete.png %}){:width="600px"}
+  ![Business Central Decision Complete]({% image_path business-central-decision-table-complete.png %}){:width="800px"}
 
 20. Save the table once you finish.
 
@@ -204,15 +204,15 @@ To create the rule:
 
 1. At the top of the screen under the main heading, click the _ccd-project_ to bring you back to the homepage for the project
 
-    ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="600px"}
+    ![Business Central Breadcrumb bar ccd project]({% image_path business-central-breadcrumb-bar-ccd-project.png %}){:width="800px"}
 
 2. Click on the blue button `Add Asset` on the right upper corner of the Library View.
 
-    ![Business Central CCD BOM Project]({% image_path business-central-ccd-bom-project.png %}){:width="600px"}
+    ![Business Central CCD BOM Project]({% image_path business-central-ccd-bom-project.png %}){:width="800px"}
 
 3. In the _Add Asset_ screen, select _Decision_ from the drop-down filter menu to filter on decision assets.
 
-    ![Business Central Add Assets Filter]({% image_path business-central-add-assets-filter.png %}){:width="600px"}
+    ![Business Central Add Assets Filter]({% image_path business-central-add-assets-filter.png %}){:width="800px"}
 
 4. Select `Guided Rule` from the filtered catalog of Wizards.
 
@@ -221,47 +221,47 @@ To create the rule:
     - Name: `automated-chargeback`
     - Package: `com.myspace.ccd_project`
 
-    ![Business Central Guided Rule New]({% image_path business-central-guided-rule-new.png %}){:width="600px"}
+    ![Business Central Guided Rule New]({% image_path business-central-guided-rule-new.png %}){:width="800px"}
 
 6. Click ok. You should see a banner in green telling you that the asset was success fully created. The UI will display the editor that allows you to author your rule.
 
-    ![Business Central Guided Rule New Wizard]({% image_path business-central-guided-rule-new-wizard.png %}){:width="600px"}
+    ![Business Central Guided Rule New Wizard]({% image_path business-central-guided-rule-new-wizard.png %}){:width="800px"}
 
 7. You will see 4 tabs in the editor panel. Select the tab that says "Data Objects"
 
-    ![Business Central Guided Rule Import Data Object]({% image_path business-central-guided-rule-import-data-object.png %}){:width="600px"}
+    ![Business Central Guided Rule Import Data Object]({% image_path business-central-guided-rule-import-data-object.png %}){:width="800px"}
 
 8. You should see 4 items listed: `AdditionalInformation`, `CreditCardHolder`, `FraudData`, and `Number`. These are shown by default as the rule is created in the same folder/package as these data objects. If `CreditCardHolder` is not listed, click on the blue _New Item_ button to import it.
 
-    ![Business Central Guided Rule Import Data Object New]({% image_path business-central-guided-rule-import-data-object-new.png %}){:width="600px"}
+    ![Business Central Guided Rule Import Data Object New]({% image_path business-central-guided-rule-import-data-object-new.png %}){:width="800px"}
 
 9. Return to the _Model_ tab and Click on the green plus-sign to the right of the word _WHEN_.
 
-    ![Business Central Guided Rule New Fact]({% image_path business-central-guided-rule-new-fact.png %}){:width="600px"}
+    ![Business Central Guided Rule New Fact]({% image_path business-central-guided-rule-new-fact.png %}){:width="800px"}
 
 10. Select the object `CreditCardHolder`, and click ok. You are now telling the rule engine that every time there is a CreditCardHolder this rule needs to be activated.
 
-    ![Business Central Guided Rule New Fact Select]({% image_path business-central-guided-rule-new-fact-select.png %}){:width="600px"}
+    ![Business Central Guided Rule New Fact Select]({% image_path business-central-guided-rule-new-fact-select.png %}){:width="800px"}
 
     In order to match the criteria of the functional requirement, you need to add a restriction on one of the card holder's properties. Automated chargeback is only approved for CC Holders that have the `status` _Gold_ or _Platinum_.
 
 11. Click on the condition `There is a Credit Card Holder`, a new wizard will open. You now _Add a restriction on a field_. From the dropdown box select the `status` field of the CC Holder.
 
-    ![Business Central Guided Rule New Property Select]({% image_path business-central-guided-rule-new-property-select.png %}){:width="600px"}
+    ![Business Central Guided Rule New Property Select]({% image_path business-central-guided-rule-new-property-select.png %}){:width="800px"}
 
 12. From the dropdown box select that the status `is contained in the (comma separated) list`. Click on the pencil icon and add the literal values  _Gold_ and _Platinum_, separated by a comma. TIP: You can also add enumerations containing these values to have them pre-populated for you. Click on the _Save_ button to save the asset.
 
-    ![Business Central Guided Rule New Property Select Values]({% image_path business-central-guided-rule-new-property-select-values.png %}){:width="600px"}
+    ![Business Central Guided Rule New Property Select Values]({% image_path business-central-guided-rule-new-property-select-values.png %}){:width="800px"}
 
 13. Go back to the _Data Objects_ tab. If the `FraudData` data object has not been imported yet, complete the same procedure, to import it. Go back to the _Model_ tab and add a constraint on the `FraudData` object the same way as you did before. You don't need to put a constraint on any property of the `FraudData`. Instead, you just need to make sure that it's there.
 
-    ![Business Central Guided Rule Check Fraud Data]({% image_path business-central-guided-rule-check-fraud-data.png %}){:width="600px"}
+    ![Business Central Guided Rule Check Fraud Data]({% image_path business-central-guided-rule-check-fraud-data.png %}){:width="800px"}
 
 14. When you want to modify the data in the objects of the Business Model or facts, you need to be able to reference the matched object from within the rule. To allow this, the object needs to be bound to a variable inside the rule. This makes the object accessible in both the left-hand-side (LHS) and  right-hand-side (RHS) through the variable. Click on the fact declaration `There is FraudData`, the wizard to modify the constraints will open.
 
 15. In the _Variable name_ field at the bottom of the form, type `data` as the name of the variable that you want to bind the `FraudData` object to. Click on the _Set_ button. Save the asset.
 
-    ![Business Central Guided Rule Modify Fraud Data]({% image_path business-central-guided-rule-modify-fraud-data.png %}){:width="600px"}
+    ![Business Central Guided Rule Modify Fraud Data]({% image_path business-central-guided-rule-modify-fraud-data.png %}){:width="800px"}
 
   Now set the property of automated chargeback to true on the `FraudData` object, so the dispute can be processed accordingly. Since this is the decision you are making, and thus the _action_ of the rule, you define this as the THEN clause,  also known as the Right Hand Side (RHS) or Action section of our rule.
 
@@ -269,23 +269,23 @@ To create the rule:
 
 1. Click on the green plus-sign next to the _THEN_ keyword.
 
-  ![Business Central Guided Rule New Then Condition]({% image_path business-central-guided-rule-new-then-condition.png %}){:width="600px"}
+  ![Business Central Guided Rule New Then Condition]({% image_path business-central-guided-rule-new-then-condition.png %}){:width="800px"}
 
 2. When the `Add new action` wizard opens select `Change field values of data` and click on _OK_. This will automatically select the `FraudData` object, as this is the only object that has been bound to a variable.
 
-  ![Business Central Guided Rule Modify Fraud Data Wizard]({% image_path business-central-guided-rule-modify-fraud-data-wizard.png %}){:width="600px"}
+  ![Business Central Guided Rule Modify Fraud Data Wizard]({% image_path business-central-guided-rule-modify-fraud-data-wizard.png %}){:width="800px"}
 
 3. Now set the value of the property `automated` to `true`, indicating that an automatic chargeback applies. Click on the action `Set value of FraudData [data]` and select the field `automated`. Click on the pencil icon to the right and assign a literal value to the property.
 
-    ![Business Central Guided Rule Modify Fraud Automated]({% image_path business-central-guided-rule-modify-fraud-automated.png %}){:width="600px"}
+    ![Business Central Guided Rule Modify Fraud Automated]({% image_path business-central-guided-rule-modify-fraud-automated.png %}){:width="800px"}
 
 4. Select `true` as the value for the automated property (this is the default value for booleans, so the property is probably already set to `true`). Note that since the type of data is `boolean`, you can only choose between `true` and `false`.
 
-    ![Business Central Guided Rule Modify Fraud Automated True]({% image_path business-central-guided-rule-modify-fraud-automated-true.png %}){:width="600px"}
+    ![Business Central Guided Rule Modify Fraud Automated True]({% image_path business-central-guided-rule-modify-fraud-automated-true.png %}){:width="800px"}
 
 5. To validate that everything is correct, click on the _Validate_ button on the top navigation bar and you should see a green "Item successfully validated!" message.
 
-    ![Business Central Guided Rule Validate]({% image_path business-central-guided-rule-validate.png %}){:width="600px"}
+    ![Business Central Guided Rule Validate]({% image_path business-central-guided-rule-validate.png %}){:width="800px"}
 
 6.  Finally, click on _Save_ to save the rule.
 
@@ -296,10 +296,10 @@ You have created your first Business Rule using the Guided editor
 
 Red Hat Process Automation Manager 7 supports the Decision Model & Notation (DMN) v1.2 standard. This means that models created in the DMN v1.1 or v1.2 specification can be imported into, and executed on, RHPAM. Apart from using Red Hat Process Automation Manager's and Red Hat Decision Manager's DMN editor, this also allows users to create DMN models using Business Central DMN editor, or even third-party editors like for example Trisotech's Digital Enterprise Suite, and execute them in RHPAM. In the following image you can see some examples of the types of diagrams you can create to define, in this case, the rules to calculate risk.
 
-![Business Central Trisotech DMN]({% image_path business-central-trisotech-dmn.png %}){:width="600px"}
+![Business Central Trisotech DMN]({% image_path business-central-trisotech-dmn.png %}){:width="800px"}
 
 DMN uses a business friendly language called FEEL or Friendly Enough Expression Language.
 
-![Business Central DMN FEEL]({% image_path business-central-dmn-feel.png %}){:width="600px"}
+![Business Central DMN FEEL]({% image_path business-central-dmn-feel.png %}){:width="800px"}
 
 For now, DMN is out of scope for this workshop. However, it is supported by RHPAM and the specification provides an additional, interesting, and standard way to model and execute decisions in your business applications.

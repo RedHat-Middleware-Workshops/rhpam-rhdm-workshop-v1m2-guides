@@ -17,21 +17,21 @@ Let's start by having an overview of assets versioning with Business Central.
 
 As you can notice on the diagram below, Red Hat Process Automation Manager is a modular platform to develop and run decisions and processes. Until now we have mostly used **Business Central** workbench to develop rules and business models. All the assets that you create or alter using Business Central are versioned in a repository (a Git-based version control system).
 
-![RHPAM 7 Architecture]({% image_path rhpam-7-architecture.png %}){:width="600px"}
+![RHPAM 7 Architecture]({% image_path rhpam-7-architecture.png %}){:width="800px"}
 
 Business Central automatically versions our code within git-based repository, and it also provides a way for us to check the changes and rollback to previous versions necessary.
 
 1. Go to your project library view and select the automated-chargeback rule. Once the editor opens click on the button Latest Version. (**NOTE:** If you re-imported the project then there is probably only 1 version listed).
 
-  ![Business Central Chargeback Versions]({% image_path business-central-chargeback-versions.png %}){:width="600px"}
+  ![Business Central Chargeback Versions]({% image_path business-central-chargeback-versions.png %}){:width="800px"}
 
 2. There is also more metadata about your assets stored in the repository, like the name of the user that created the asset, the time and data when it was last modified, etc.
 
-  ![Business Central Chargeback Versions Detail]({% image_path business-central-chargeback-versions-detail.png %}){:width="600px"}
+  ![Business Central Chargeback Versions Detail]({% image_path business-central-chargeback-versions-detail.png %}){:width="800px"}
 
 3. Click on any of the versions in the dropdown box and you will see the version of the asset tagged.
 
-  ![Business Central Chargeback Version]({% image_path business-central-chargeback-version.png %}){:width="600px"}
+  ![Business Central Chargeback Version]({% image_path business-central-chargeback-version.png %}){:width="800px"}
 
 ## Understanding the deployment process
 
@@ -62,13 +62,13 @@ Let's check your Process Server using Business Central.
 
 2. Click on _Deploy_. This will open the _Server Configurations_ perspective. Notice which capabilities you have enabled for your Process Server.
 
-![Business Central Process Server Server Configurations]({% image_path business-central-server-configuration.png %}){:width="600px"}
+![Business Central Process Server Server Configurations]({% image_path business-central-server-configuration.png %}){:width="800px"}
 
 2. Return to the Home screen and select _Design_. Select `MySpace`, next, select your Credit Card Dispute project (`ccd-project`). The Library view should open with a list of all your assets. These assets will be compiled and packaged inside a _KJAR_, a _Deployment Unit_.
 
 3. Click on the _Deploy_ button in the top right corner.
 
-    ![Business Central Deploy]({% image_path business-central-deploy.png %}){:width="600px"}
+    ![Business Central Deploy]({% image_path business-central-deploy.png %}){:width="800px"}
 
 You will see that the project is first built, meaning the assets are compiled and packaged, and then deployed to a Execution Server container. Go back to the Home screen and select Deploy. You will now see a container running with your newly created decisions.
 
@@ -80,13 +80,13 @@ Let's check if the service you deployed is available.
 
 2. Click on the URL of the container, and a new tab should open:
 
-  ![Business Central Execution Services Detail]({% image_path business-central-execution-services-detail.png %}){:width="600px"}
+  ![Business Central Execution Services Detail]({% image_path business-central-execution-services-detail.png %}){:width="800px"}
 
 3. You may also be prompted for credentials. Use the same credentials you used to log into the Business Central console.
   - user: `pamAdmin`
   - password: `redhatpam1!`
 
-![Business Central Execution Services Info]({% image_path business-central-execution-services-info.png %}){:width="600px"}
+![Business Central Execution Services Info]({% image_path business-central-execution-services-info.png %}){:width="800px"}
 
 4. Notice the Process Service responds with details about the `Kie Container` where your `Deployment Unit` is running.
 
