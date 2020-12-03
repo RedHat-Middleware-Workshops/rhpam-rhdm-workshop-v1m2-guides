@@ -12,7 +12,7 @@ To access the Swagger page of the execution server, we first need to get the URL
 
 2. A new browser tab should open. Append to the end of the URL, `/docs`. TThe full URL will look soomething like http://insecure-rhpam7-kieserver-rhpam-user1.apps.cluster-rio-d6c5.rio-d6c5.example.opentlc.com/docs/. You will see the following page
 
-![KIE Server Swagger]({% image_path kie-server-swagger.png %}){:width="800px"}
+    ![KIE Server Swagger]({% image_path kie-server-swagger.png %}){:width="800px"}
 
 3. In this page, navigate to the section that says **KIE session assets**, and click on the green bar that says *POST /server/containers/instances/{containerId} Executes one or more runtime commands*. This will show the API description of this RESTful operation.
 
@@ -20,7 +20,7 @@ To access the Swagger page of the execution server, we first need to get the URL
 
 5. First we change the *Parameter content type* and the *Response content type* from `application/xml` to `application/json`. This specifies the data format that we will be using for our request and response. In this case this is the JSON format.
 
-![Swaggger Application JSON]({% image_path swagger-application-json.png %}){:width="800px"}
+    ![Swaggger Application JSON]({% image_path swagger-application-json.png %}){:width="800px"}
 
 6. Next we need to specify the container-id that contains the deployment of the rules that we want to evaluate. The name of our container is `ccd-project_1.0.0-SNAPSHOT`{{copy}}.
 
@@ -67,16 +67,16 @@ To access the Swagger page of the execution server, we first need to get the URL
 }
 ```
 
-We can see that we pass in the `FraudData`, with a `totalFraudAmount` of 1000.0. We also pass in the `CreditCardHolder` with a *Gold* status.
+​	We can see that we pass in the `FraudData`, with a `totalFraudAmount` of 1000.0. We also pass in the `CreditCardHolder` with a *Gold* status.
 
 8. After inputing the data above, click on the blue *Execute* button to fire the request.
-_If the browser asks for a username and password, use the same username/password you used to log into Business Central_
+  _If the browser asks for a username and password, use the same username/password you used to log into Business Central_
 
-![Swaggger Request]({% image_path swagger-request.png %}){:width="800px"}
+  ![Swaggger Request]({% image_path swagger-request.png %}){:width="800px"}
 
-If all goes well, the decision service will reply with the following response:
+  If all goes well, the decision service will reply with the following response:
 
-![Swaggger Response]({% image_path swagger-response.png %}){:width="800px"}
+  ![Swaggger Response]({% image_path swagger-response.png %}){:width="800px"}
 
 Note that the rules have qualified this data for *automatic processing* and the risk has been set to *1*:
 

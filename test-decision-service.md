@@ -72,24 +72,23 @@ In the previous exercise, we used the _Test Scenario_ tooling to test the rules 
 
 In order to do that, let's use a simple web-application that we've provided for you. The application allows you to enter the data of the credit-card holder, and the data of the line item. The data is submitted to the Decision Server, which will calculate the risk of the transaction and determine whether the data can be automatically processed.
 
-![ReactJS App]({% image_path reactjs-app.png %}){:width="800px"}
+​	![ReactJS App]({% image_path reactjs-app.png %}){:width="800px"}
 
 1. To access the application, go back to your OpenShift environment, and click on the `react-web-app` route to open it in a new tab:
 
-![ReactJS App Route]({% image_path openshift-react-app-route.png %}){:width="800px"}
+   ![ReactJS App Route]({% image_path openshift-react-app-route.png %}){:width="800px"}
 
 2. Once you've opened the react web app, enter the following details:
 
-  - **Name:** Jim
-  - **Age:** 52
-  - **Status:** Gold
-  - **Description:** Delta Airlines
-  - **Amount:** 1000
-
+    - **Name:** Jim
+    - **Age:** 52
+    - **Status:** Gold
+    - **Description:** Delta Airlines
+    - **Amount:** 1000
 
 3. Next, click on the _Submit_ button. The application will send a RESTful request to the Decision Server. If everything is working correctly, the Decision Server will send a result that will be displayed in the application:
 
-![ReactJS App Request Response]({% image_path reactjs-app-request-response.png %}){:width="800px"}
+    ![ReactJS App Request Response]({% image_path reactjs-app-request-response.png %}){:width="800px"}
 
 We can see that the `riskRating` has been set to **1** and the transaction is eligible for automated processing. Feel free to test your Decision Service with different values to see if all the use-cases you've implemented in your rules are covered.
 

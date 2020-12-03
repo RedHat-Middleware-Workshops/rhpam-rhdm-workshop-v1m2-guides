@@ -45,6 +45,8 @@ You have defined the Business Object Model in the previous lab. In the last step
 
 ### Decision Tables
 
+#### Creating the Decision Table
+
 A very common way to define the logic behind risk assessment is to store this information in spreadsheets. With Red Hat Process Automation Manager you can use the same spreadsheet approach and make it an executable asset (i.e. a set of rules) in the engine. In this section you are going to create a _Decision Table_ to automate the risk assessment rules that were given to you.
 
 1. First, go back to the Library view and click on the blue `Add Asset` button in the top right corner.
@@ -76,12 +78,14 @@ A very common way to define the logic behind risk assessment is to store this in
 
 In our system, the properties evaluated to determine the risk scoring are:
 
-  - Status of the Credit Card Holder
-  - Total Amount disputed from the Fraud Data
+    - Status of the Credit Card Holder
+    - Total Amount disputed from the Fraud Data
+
+#### Setting up our decision table
 
 Let's add the Credit Card Holder condition column.
 
-5. Go to the _Columns_ tab and click on the button `Insert Column`, select `Add Condition` and click Next.
+1. Go to the _Columns_ tab and click on the button `Insert Column`, select `Add Condition` and click Next.
 
     ![Business Central Add Condition]({% image_path business-central-add-condition.png %}){:width="800px"}
 
@@ -141,19 +145,21 @@ Let's add the Credit Card Holder condition column.
 
     ![Business Central Decision Table Columns Action Data Finish]({% image_path business-central-decision-table-columns-action-data-finish.png %}){:width="800px"}
 
-17. Click on the _Save_ button to save the decision table.
+14. Click on the _Save_ button to save the decision table.
 
-18. Go back to your `Model` tab. You are now going to add the actual constraints and actions, i.e. the actual rules. Looking at our requirements, the first constraint is defined as:
+#### Writing the business rules
 
-  _For a standard customer, and a dispute amount between 0 and 100, the risk is low._
+1. Go back to your `Model` tab. You are now going to add the actual constraints and actions, i.e. the actual rules. Looking at our requirements, the first constraint is defined as:
 
-  There are 4 levels of risk: low, medium, high and very-high. You will define these risk-levels as integers: 1,2,3, and 4.
+    _For a standard customer, and a dispute amount between 0 and 100, the risk is low._
 
-19. Click on the button Insert and select append row from the dropdown menu.
+    There are 4 levels of risk: low, medium, high and very-high. You will define these risk-levels as integers: 1,2,3, and 4.
+
+2. Click on the button Insert and select append row from the dropdown menu.
 
      ![Business Central Decision Table Columns Action Data Finish Model]({% image_path business-central-decision-table-append-row.png %}){:width="800px"}
 
-20. Click on the _Description_ cell of the new row and type "_Standard customer low risk_". Use the following values for the other columns:
+3. Click on the _Description_ cell of the new row and type "_Standard customer low risk_". Use the following values for the other columns:
 
      - Description:`Standard customer low risk`{{copy}}  
      - Status:`Standard`{{copy}}  
@@ -165,23 +171,22 @@ Let's add the Credit Card Holder condition column.
 
     ![Business Central Decision Table First Row]({% image_path business-central-decision-table-first-row.png %}){:width="800px"}
 
-21. Based on the business rules, apply the same procedure for the rest of it.
+4. Based on the business rules, apply the same procedure for the rest of it.
 
-  - Standard customer 0-100: low risk (Risk scoring = 0)
-  - Standard customer 100-500: medium risk (Risk scoring = 1)
-  - Standard customer above 500: high risk (Risk scoring = 2)
-  - Silver customer 0-250: low risk (Risk scoring = 0)
-  - Silver customer 250-500: medium risk (Risk scoring = 1)
-  - Silver customer above 500: high risk (Risk scoring = 2)
-  - Gold customer 0-500: low risk (Risk scoring = 0)
-  - Gold customer above 500: medium risk (Risk scoring = 1)
+    - Standard customer 0-100: low risk (Risk scoring = 0)
+    - Standard customer 100-500: medium risk (Risk scoring = 1)
+    - Standard customer above 500: high risk (Risk scoring = 2)
+    - Silver customer 0-250: low risk (Risk scoring = 0)
+    - Silver customer 250-500: medium risk (Risk scoring = 1)
+    - Silver customer above 500: high risk (Risk scoring = 2)
+    - Gold customer 0-500: low risk (Risk scoring = 0)
+    - Gold customer above 500: medium risk (Risk scoring = 1)
 
+    At the end your decision table should look as follows:
 
-  At the end your decision table should look as follows:
+    ​	![Business Central Decision Complete]({% image_path business-central-decision-table-complete.png %}){:width="800px"}
 
-  ![Business Central Decision Complete]({% image_path business-central-decision-table-complete.png %}){:width="800px"}
-
-20. Save the table once you finish.
+5. Save the table once you finish.
 
 
 ## Guided Rules
@@ -260,32 +265,32 @@ To create the rule:
 15. In the _Variable name_ field at the bottom of the form, type `data` as the name of the variable that you want to bind the `FraudData` object to. Click on the _Set_ button. Save the asset.
 
     ![Business Central Guided Rule Modify Fraud Data]({% image_path business-central-guided-rule-modify-fraud-data.png %}){:width="800px"}
+    
+      Now set the property of automated chargeback to true on the `FraudData` object, so the dispute can be processed accordingly. Since this is the decision you are making, and thus the _action_ of the rule, you define this as the THEN clause,  also known as the Right Hand Side (RHS) or Action section of our rule.
+    
+      All of the information of the CC dispute is stored in facts. These facts can live in a session that the engine will keep in memory. So every time you evaluate a new fact, or change something to an existing fact, you will have all of the Objects in the session available in the process of decision making. In the RHS, or action, part of the rule you can change the values of any property on the objects that you can reference via the variables, or even create and add new objects/facts to the session (this is usually referred to as _inferring_ new data or information). Every time a property in an object changes, all of the decisions in which this property is used will be reevaluated to make sure that no other rule needs to be applied.
+    
+16. Click on the green plus-sign next to the _THEN_ keyword.
 
-  Now set the property of automated chargeback to true on the `FraudData` object, so the dispute can be processed accordingly. Since this is the decision you are making, and thus the _action_ of the rule, you define this as the THEN clause,  also known as the Right Hand Side (RHS) or Action section of our rule.
+       ![Business Central Guided Rule New Then Condition]({% image_path business-central-guided-rule-new-then-condition.png %}){:width="800px"}
 
-  All of the information of the CC dispute is stored in facts. These facts can live in a session that the engine will keep in memory. So every time you evaluate a new fact, or change something to an existing fact, you will have all of the Objects in the session available in the process of decision making. In the RHS, or action, part of the rule you can change the values of any property on the objects that you can reference via the variables, or even create and add new objects/facts to the session (this is usually referred to as _inferring_ new data or information). Every time a property in an object changes, all of the decisions in which this property is used will be reevaluated to make sure that no other rule needs to be applied.
+17. When the `Add new action` wizard opens select `Change field values of data` and click on _OK_. This will automatically select the `FraudData` object, as this is the only object that has been bound to a variable.
 
-1. Click on the green plus-sign next to the _THEN_ keyword.
+       ![Business Central Guided Rule Modify Fraud Data Wizard]({% image_path business-central-guided-rule-modify-fraud-data-wizard.png %}){:width="800px"}
 
-  ![Business Central Guided Rule New Then Condition]({% image_path business-central-guided-rule-new-then-condition.png %}){:width="800px"}
+18. Now set the value of the property `automated` to `true`, indicating that an automatic chargeback applies. Click on the action `Set value of FraudData [data]` and select the field `automated`. Click on the pencil icon to the right and assign a literal value to the property.
 
-2. When the `Add new action` wizard opens select `Change field values of data` and click on _OK_. This will automatically select the `FraudData` object, as this is the only object that has been bound to a variable.
+     ​	![Business Central Guided Rule Modify Fraud Automated]({% image_path business-central-guided-rule-modify-fraud-automated.png %}){:width="800px"}
 
-  ![Business Central Guided Rule Modify Fraud Data Wizard]({% image_path business-central-guided-rule-modify-fraud-data-wizard.png %}){:width="800px"}
+19. Select `true` as the value for the automated property (this is the default value for booleans, so the property is probably already set to `true`). Note that since the type of data is `boolean`, you can only choose between `true` and `false`.
 
-3. Now set the value of the property `automated` to `true`, indicating that an automatic chargeback applies. Click on the action `Set value of FraudData [data]` and select the field `automated`. Click on the pencil icon to the right and assign a literal value to the property.
+     ​	![Business Central Guided Rule Modify Fraud Automated True]({% image_path business-central-guided-rule-modify-fraud-automated-true.png %}){:width="800px"}
 
-    ![Business Central Guided Rule Modify Fraud Automated]({% image_path business-central-guided-rule-modify-fraud-automated.png %}){:width="800px"}
+20. To validate that everything is correct, click on the _Validate_ button on the top navigation bar and you should see a green "Item successfully validated!" message.
 
-4. Select `true` as the value for the automated property (this is the default value for booleans, so the property is probably already set to `true`). Note that since the type of data is `boolean`, you can only choose between `true` and `false`.
+     ​	![Business Central Guided Rule Validate]({% image_path business-central-guided-rule-validate.png %}){:width="800px"}
 
-    ![Business Central Guided Rule Modify Fraud Automated True]({% image_path business-central-guided-rule-modify-fraud-automated-true.png %}){:width="800px"}
-
-5. To validate that everything is correct, click on the _Validate_ button on the top navigation bar and you should see a green "Item successfully validated!" message.
-
-    ![Business Central Guided Rule Validate]({% image_path business-central-guided-rule-validate.png %}){:width="800px"}
-
-6.  Finally, click on _Save_ to save the rule.
+21. Finally, click on _Save_ to save the rule.
 
 You have created your first Business Rule using the Guided editor
 <!-- // TODO Update to business central DMN editor -->
@@ -294,7 +299,7 @@ You have created your first Business Rule using the Guided editor
 
 Red Hat Process Automation Manager 7 supports the Decision Model & Notation (DMN) v1.2 standard. This means that models created in the DMN v1.1 or v1.2 specification can be imported into, and executed on, RHPAM. Apart from using Red Hat Process Automation Manager's and Red Hat Decision Manager's DMN editor, this also allows users to create DMN models using Business Central DMN editor, or even third-party editors like for example Trisotech's Digital Enterprise Suite, and execute them in RHPAM. In the following image you can see some examples of the types of diagrams you can create to define, in this case, the rules to calculate risk.
 
-![Business Central Trisotech DMN]({% image_path business-central-dmn.png %}){:width="800px"}
+![Business Central Trisotech DMN]({% image_path business-central-dmn.png %}){:width="600px"}
 
 DMN uses a business friendly language called FEEL or Friendly Enough Expression Language.
 
