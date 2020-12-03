@@ -39,8 +39,6 @@ The rules defined for the process are:
       - Gold customer 0-500: low risk
       - Gold customer above 500: medium risk
 
-- If the customer's billing address is in the state of Texas, California or Florida, the dispute should be considered of higher risk.
-
 ## The Authoring Tools
 
 You have defined the Business Object Model in the previous lab. In the last step of the previous lab, you've imported a project with the complete Business Object Model. You will use this project as the base for this lab.
@@ -296,7 +294,7 @@ You have created your first Business Rule using the Guided editor
 
 Red Hat Process Automation Manager 7 supports the Decision Model & Notation (DMN) v1.2 standard. This means that models created in the DMN v1.1 or v1.2 specification can be imported into, and executed on, RHPAM. Apart from using Red Hat Process Automation Manager's and Red Hat Decision Manager's DMN editor, this also allows users to create DMN models using Business Central DMN editor, or even third-party editors like for example Trisotech's Digital Enterprise Suite, and execute them in RHPAM. In the following image you can see some examples of the types of diagrams you can create to define, in this case, the rules to calculate risk.
 
-![Business Central Trisotech DMN]({% image_path business-central-trisotech-dmn.png %}){:width="800px"}
+![Business Central Trisotech DMN]({% image_path business-central-dmn.png %}){:width="800px"}
 
 DMN uses a business friendly language called FEEL or Friendly Enough Expression Language.
 
