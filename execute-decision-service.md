@@ -26,51 +26,51 @@ To access the Swagger page of the execution server, we first need to get the URL
 
 7. Finally, we provide the body of the request. In the body we pass the data, based on our domain model or business model, on which we evaluate the rules. Paste the following request body into the *body* text-area in the panel:
 
-```
-{  
-   "lookup":"ccd-ksession-stateless",
-   "commands":[  
-      {  
-         "insert":{  
-            "object":{  
-               "com.myspace.ccd_project.CreditCardHolder":{  
-                  "age":40,
-                  "status":"Gold"
-               }
-            },
-            "out-identifier":"ccholder",
-            "return-object":true,
-            "entry-point":"DEFAULT",
-            "disconnected":false
-         }
-      },
-      {  
-         "insert":{  
-            "object":{  
-               "com.myspace.ccd_project.FraudData":{  
-                  "totalFraudAmount":1000.0
-               }
-            },
-            "out-identifier":"frauddata",
-            "return-object":true,
-            "entry-point":"DEFAULT",
-            "disconnected":false
-         }
-      },
-      {  
-         "fire-all-rules":{  
-            "max":-1,
-            "out-identifier":null
-         }
-      }
-   ]
-}
-```
+    We can see that we pass in the `FraudData`, with a `totalFraudAmount` of 1000.0. We also pass in the `CreditCardHolder` with a *Gold* status.
 
-​	We can see that we pass in the `FraudData`, with a `totalFraudAmount` of 1000.0. We also pass in the `CreditCardHolder` with a *Gold* status.
+    ```
+    {  
+       "lookup":"ccd-ksession-stateless",
+       "commands":[  
+          {  
+             "insert":{  
+                "object":{  
+                   "com.myspace.ccd_project.CreditCardHolder":{  
+                      "age":40,
+                      "status":"Gold"
+                   }
+                },
+                "out-identifier":"ccholder",
+                "return-object":true,
+                "entry-point":"DEFAULT",
+                "disconnected":false
+             }
+          },
+          {  
+             "insert":{  
+                "object":{  
+                   "com.myspace.ccd_project.FraudData":{  
+                      "totalFraudAmount":1000.0
+                   }
+                },
+                "out-identifier":"frauddata",
+                "return-object":true,
+                "entry-point":"DEFAULT",
+                "disconnected":false
+             }
+          },
+          {  
+             "fire-all-rules":{  
+                "max":-1,
+                "out-identifier":null
+             }
+          }
+       ]
+    }
+    ```
 
 8. After inputing the data above, click on the blue *Execute* button to fire the request.
-  _If the browser asks for a username and password, use the same username/password you used to log into Business Central_
+    _If the browser asks for a username and password, use the same username/password you used to log into Business Central_
 
   ![Swaggger Request]({% image_path swagger-request.png %}){:width="800px"}
 
