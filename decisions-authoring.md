@@ -297,7 +297,7 @@ You have created your first Business Rule using the Guided editor
 
 ## Decision Model & Notation (DMN)
 
-Red Hat Process Automation Manager 7 supports the Decision Model & Notation (DMN) v1.2 standard. This means that models created in the DMN v1.1 or v1.2 specification can be imported into, and executed on, RHPAM. Apart from using Red Hat Process Automation Manager's and Red Hat Decision Manager's DMN editor, this also allows users to create DMN models using Business Central DMN editor, or even third-party editors like for example Trisotech's Digital Enterprise Suite, and execute them in RHPAM. In the following image you can see some examples of the types of diagrams you can create to define, in this case, the rules to calculate risk.
+Red Hat Process Automation Manager 7 supports the Decision Model & Notation (DMN) v1.3 standard. This means that models created in DMN can be authored or imported into PAM, and executed on the engine. In the following image you can see some examples of the types of diagrams you can create to define, in this case, the rules to calculate risk.
 
 ![Business Central Trisotech DMN]({% image_path business-central-dmn.png %}){:width="600px"}
 
