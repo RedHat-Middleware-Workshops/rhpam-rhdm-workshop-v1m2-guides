@@ -11,6 +11,9 @@ Agenda
 * Testing a Decision Service
 * Executing a Decision Service
 
+Give a look at: https://red.ht/pam-dm-workshop-module2
+
+
 Run locally
 === 
 
@@ -24,6 +27,15 @@ Lab Instructions on OpenShift
 ===
 
 Note that if you have installed the lab infra via APB, the lab instructions are already deployed.
+
+*Option 1:*
+Login to your OCP Cluster and run:
+
+````
+oc create -f support/ocp-provisioning.yaml
+````
+
+*Option 2:* 
 
 Here is an example Ansible playbook to deploy the lab instruction to your OpenShift cluster manually.
 ```
