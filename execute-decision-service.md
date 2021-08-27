@@ -10,11 +10,17 @@ To access the Swagger page of the execution server, we first need to get the URL
 
     ![Execution Server Route]({% image_path kie-server-route.png %}){:width="800px"}
 
-2. A new browser tab should open. Append to the end of the URL, `/docs`. TThe full URL will look soomething like http://insecure-rhpam7-kieserver-rhpam-user1.apps.cluster-rio-d6c5.rio-d6c5.example.opentlc.com/docs/. You will see the following page
+2. A new browser tab should open. Append to the end of the URL, `/docs`. The full URL will look soomething like http://insecure-rhpam7-kieserver-rhpam-user1.apps.cluster-rio-d6c5.rio-d6c5.example.opentlc.com/docs/. You will see the following page
 
     ![KIE Server Swagger]({% image_path kie-server-swagger.png %}){:width="800px"}
+    
+     NOTE: _If the swagger page does not display, open the `Topology` view of the `rhpam-userX` project. Click on the `rhpam7-kieserver` deployment, select the   'Resources' tab, and click the Route named `rhpam7-kieserver` and append `/docs` to the end of the URL._
 
-3. In this page, navigate to the section that says **KIE session assets**, and click on the green bar that says *POST /server/containers/instances/{containerId} Executes one or more runtime commands*. This will show the API description of this RESTful operation.
+    _The full URL will look something like  https://rhpam7-kieserver-rhpam-user1.apps.cluster-rio-d6c5.rio-d6c5.example.opentlc.com/docs/_
+    
+    ![Execution Server Secure Route]({% image_path kie-server-route-secure.png %}){:width="800px"}
+
+3. In the swagger page, navigate to the section that says **KIE session assets**, and click on the green bar that says *POST /server/containers/instances/{containerId} Executes one or more runtime commands*. This will show the API description of this RESTful operation.
 
 4. Click on the *Try it out* button at the right of the panel, this will allow you to enter the values of the request.
 
