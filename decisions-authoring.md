@@ -125,7 +125,7 @@ Let's add the Credit Card Holder condition column.
     - property: `totalFraudAmount`
     - operation:
         - `greater than or equal to` for one column. Use header name: "Minimum Amount"
-        - `less than` for the second column. Use header nam "Maximum Amount"
+        - `less than` for the second column. Use header name "Maximum Amount"
 
     Note that for the second column you don't need to create a new fact pattern, you can reuse the existing one.
 
