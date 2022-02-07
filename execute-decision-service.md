@@ -10,7 +10,7 @@ To access the Swagger page of the execution server, we first need to get the URL
 
     ![Execution Server Route]({% image_path kie-server-route.png %}){:width="800px"}
 
-2. A new browser tab should open. Append to the end of the URL, `/docs`. The full URL will look something like http://insecure-rhpam7-kieserver-rhpam-user1.apps.cluster-rio-d6c5.rio-d6c5.example.opentlc.com/docs/. You will see the following page
+2. A new browser tab should open. Append to the end of the URL, `/docs`. Update the URL from 'https' to 'http'. The full URL will look something like http://insecure-rhpam7-kieserver-rhpam-user1.apps.cluster-rio-d6c5.rio-d6c5.example.opentlc.com/docs/. You will see the following page
 
     ![KIE Server Swagger]({% image_path kie-server-swagger.png %}){:width="800px"}
     
